@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 15:31:09 by taboterm          #+#    #+#             */
-/*   Updated: 2023/04/07 19:22:01 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/04/13 15:57:25 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,9 @@
 * the end of the list 
 * return: none
 */
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstsdd_back(t_stack **lst, t_stack *new)
 {
-	if(!lst)
-		return (NULL);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
-}
-
-void	ft_lstsdd_back(t_list **lst, t_list *new)
-{
-	t_list	*temp;
+	t_stack	*temp;
 
 	temp = *lst; //assigns value *lst is pointing to
 	if (!temp) // if empty create new node (new list)

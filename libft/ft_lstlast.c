@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:11:26 by taboterm          #+#    #+#             */
-/*   Updated: 2023/04/07 16:16:47 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/04/13 15:58:36 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 * @param lst: points to node at the beginning of list
 * Return value: last node of the list
 */
-t_list	*ft_lstlast(t_list *lst)
+t_stack	*ft_lstlast(t_stack *lst)
 {
 	if(!lst)
 		return (NULL);

@@ -6,17 +6,17 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 20:07:59 by taboterm          #+#    #+#             */
-/*   Updated: 2023/04/12 20:10:32 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/04/13 16:02:49 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-t_list	*ft_lstnew_mod(int content)
+t_stack	*ft_lstnew_mod(int content)
 {
-	t_list	*new_element;
+	t_stack	*new_element;
 
-	new_element = malloc(sizeof(t_list));
+	new_element = malloc(sizeof(t_stack));
 	if (new_element)
 	{
 		new_element->content = content;

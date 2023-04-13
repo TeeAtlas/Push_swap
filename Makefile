@@ -2,24 +2,33 @@
 NAME = push_swap
 
 #source id
-SRC = main.c
+SRCS = push_swap.c\
 
 OBJS = $(SRCS:%.c=%.o)
 
 #compiling info
-CC = gcc
-CFLAGS = -Wall -Wextra - Werror -g
+CC = cc
+CFLAGS = -Wall -Wextra -Werror -g
 
-RM = rm -fclean
+RM = rm -f
 
 #including libft
 LIBFT = libft/libft.a
 
+#make desired targets
+all:	$(NAME)
+
+# $@ says to put the output of the compilation 
+# in the file named on the left side of the :
+# !! STILL NOT SURE WHAT $^ MEANS
+$(%.o): $(%.c)
+	$(CC) $(CFLAGS) -o $@ -c $^
+
 #make target executable
 $(NAME): $(OBJS)
-
-#make desired targets
-all:	${NAME}
+	make -C ./libft
+	echo $(LIBFT)
+	$(CC)  $(CFLAGS) $(OBJS) -o $(NAME) $(LIBFT)
 
 clean:
 	make clean -C ./libft
