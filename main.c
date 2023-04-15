@@ -6,21 +6,30 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:32:17 by taboterm          #+#    #+#             */
-/*   Updated: 2023/04/15 11:39:54 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/04/15 16:32:35 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* start at argc[1], becuase argc[0] is executable 
-*/
+/* all check throw 1 flag if ok and 0 if not */
+/* start at argc[1], because argc[0] is executable */
 int	main(int argc, char **argv)
 {
 	int i;
-	t_stack	*stack_a;
-	(void)argc;
+	t_list	*stack_a;
 	
 	i = 1;
+	/* start parsing with checks*/
+	/* int check - no characters */
+	/* max min int check */
+	/* dup check */
+	input_check(argc, argv);
+	
+	
+	
+
+	/* adding nodes with while loop for each number */
 	while(argv[i])
 	{
 		ft_lstadd_back(&stack_a, ft_lstnew_mod(ft_atoi(argv[i])));
@@ -31,23 +40,6 @@ int	main(int argc, char **argv)
 	printf("Third Element: %d\n", stack_a->next->next->content);
 	return (0);
 }
-
-
-// int	main(int argc, char **argv)
-// {
-// 	Node root;
-// 	root.x = 15;
-// 	root.next = malloc(sizeof(Node));
-// 	root.next->x = -2;
-	
-// 	printf("First Element: %d\n", root.x);
-// 	printf("Second Element: %d\n", root.next->x);
-
-// 	free(root.next);
-// 	return 0;
-// }
-
-
 
 /*
 ft_atoi(argv[i])  ===>  int 10 

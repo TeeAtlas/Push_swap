@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 19:45:38 by taboterm          #+#    #+#             */
-/*   Updated: 2023/04/13 16:01:33 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/04/15 15:15:07 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 * front of the linked list
 * return: none
 */
-void	ft_lstadd_front(t_stack **lst, t_stack *new)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (new != NULL)
 	{

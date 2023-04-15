@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 13:46:07 by taboterm          #+#    #+#             */
-/*   Updated: 2023/04/13 16:31:43 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/04/15 15:18:01 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 # include <unistd.h>
 # include <stdarg.h>
 
-typedef struct s_stack
+typedef struct s_list
 {
 	int				content; // integer element 4 bits
-	struct s_stack	*next; // second building block - pointer to same element we are in
-}	t_stack;
+	struct s_list	*next; // second building block - pointer to same element we are in
+}	t_list;
 
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
@@ -61,12 +61,12 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 /* linked lists */
-t_stack	*ft_lstnew(int content);
-t_stack	*ft_lstnew_mod(int content);
-t_stack	*ft_lstlast(t_stack *lst);
-int		ft_lstsize(t_stack *lst);
-void	ft_lstadd_front(t_stack **lst, t_stack *new);
-void	ft_lstadd_back(t_stack **lst, t_stack *new);
+t_list	*ft_lstnew(int content);
+t_list	*ft_lstnew_mod(int content);
+t_list	*ft_lstlast(t_list *lst);
+int		ft_lstsize(t_list *lst);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+void	ft_lstadd_back(t_list **lst, t_list *new);
 // void	ft_lstclear(t_list **lst, void (*del)(void *));
 // void	ft_lstiter(t_list *lst, void (*f)(void *));
 // void	ft_lstdelone(t_list *lst, void (*del)(void *));

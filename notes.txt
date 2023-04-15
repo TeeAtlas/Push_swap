@@ -25,3 +25,8 @@ will have 8 steps:
 	• if stack A is not sorted, chose between ra and rra to rotate it into ascending order
 
 
+
+start:
+
+add nodes to linked list
+create argument checker
