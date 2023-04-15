@@ -1,42 +1,61 @@
-#target output
-NAME = push_swap
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/04/15 11:39:37 by taboterm          #+#    #+#              #
+#    Updated: 2023/04/15 12:21:53 by taboterm         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-#source id
-SRCS = push_swap.c\
+# Target output
+NAME = push_swap
+# Compiling info
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror -g
+DEBUG = -fsanitize=address
+LEAKS = leaks -atExit -- ./push_swap
+
+# Libraries
+LIBFT_A = libft/libft.a
+
+
+# Paths
+SRC_PATH = src/
+OBJ_PATH = obj/
+LIBFT = libft
+
+# Source and object files
+SRCS = main.c \
 
 OBJS = $(SRCS:%.c=%.o)
 
-#compiling info
-CC = cc
-CFLAGS = -Wall -Wextra -Werror -g
-
-RM = rm -f
-
-#including libft
-LIBFT = libft/libft.a
-
-#make desired targets
-all:	$(NAME)
+# Make desired targets = Rules
+all: $(OBJ_PATH) $(NAME)
 
 # $@ says to put the output of the compilation 
 # in the file named on the left side of the :
 # !! STILL NOT SURE WHAT $^ MEANS
-$(%.o): $(%.c)
-	$(CC) $(CFLAGS) -o $@ -c $^
+$(OBJ_PATH):
+	mkdir $(OBJ_PATH)
 
-#make target executable
+# Make target executable & Debug
 $(NAME): $(OBJS)
-	make -C ./libft
+	$(MAKE) -C $(LIBFT)
 	echo $(LIBFT)
-	$(CC)  $(CFLAGS) $(OBJS) -o $(NAME) $(LIBFT)
+	$(CC)  $(CFLAGS) $(OBJS) $(LIBFT_A) -o $(NAME)
+	mv $(OBJS) $(OBJ_PATH)
 
 clean:
-	make clean -C ./libft
+	rm -rf $(OBJ_PATH)
+	$(MAKE) clean -C $(LIBFT)
 
 fclean: clean
-	make clean -C ./libft
-	/bin/rm -f *.o $(NAME)
+	rm -rf $(NAME)
+	$(MAKE) clean -C $(LIBFT)
 
 re: fclean all
 
-.PHONY: clean fclean all re
+.PHONY: all clean fclean re

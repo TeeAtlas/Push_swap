@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 20:01:16 by taboterm          #+#    #+#             */
-/*   Updated: 2023/04/13 16:47:41 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/04/15 12:28:09 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@
 // 	struct s_stack	*next; //second building block - pointer to the same element we are in
 // } t_stack;
 
-int		push_swap(int argc, char **argv);
+int		main(int argc, char **argv);
 
 #endif 

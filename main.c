@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:32:17 by taboterm          #+#    #+#             */
-/*   Updated: 2023/04/13 16:43:34 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/04/15 11:39:54 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /* start at argc[1], becuase argc[0] is executable 
 */
-int	push_swap(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	int i;
 	t_stack	*stack_a;
