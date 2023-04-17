@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:32:17 by taboterm          #+#    #+#             */
-/*   Updated: 2023/04/15 16:32:35 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/04/17 17:44:14 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,6 @@ int	main(int argc, char **argv)
 	/* dup check */
 	input_check(argc, argv);
 	
-	
-	
-
 	/* adding nodes with while loop for each number */
 	while(argv[i])
 	{
