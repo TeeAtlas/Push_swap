@@ -6,13 +6,13 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:32:17 by taboterm          #+#    #+#             */
-/*   Updated: 2023/04/17 17:44:14 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/04/18 20:41:15 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* all check throw 1 flag if ok and 0 if not */
+/* all checks throw 1 flag if ok and 0 if not */
 /* start at argc[1], because argc[0] is executable */
 int	main(int argc, char **argv)
 {
@@ -29,12 +29,12 @@ int	main(int argc, char **argv)
 	/* adding nodes with while loop for each number */
 	while(argv[i])
 	{
-		ft_lstadd_back(&stack_a, ft_lstnew_mod(ft_atoi(argv[i])));
+		ft_lstadd_back(&stack_a, ft_lstnew_mod(ft_atoi_mod(argv[i])));
 		i++;
 	}
-	printf("First Element: %d\n", stack_a->content);
-	printf("Second Element: %d\n", stack_a->next->content);
-	printf("Third Element: %d\n", stack_a->next->next->content);
+	printf("First Element: %ld\n", stack_a->content);
+	printf("Second Element: %ld\n", stack_a->next->content);
+	printf("Third Element: %ld\n", stack_a->next->next->content);
 	return (0);
 }
 

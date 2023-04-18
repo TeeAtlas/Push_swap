@@ -6,7 +6,7 @@
 #    By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/15 11:39:37 by taboterm          #+#    #+#              #
-#    Updated: 2023/04/15 16:33:55 by taboterm         ###   ########.fr        #
+#    Updated: 2023/04/18 19:05:08 by taboterm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,6 @@ $(OBJ_PATH):
 # Make target executable & Debug
 $(NAME): $(OBJS)
 	$(MAKE) -C $(LIBFT)
-	echo $(LIBFT)
 	$(CC)  $(CFLAGS) $(OBJS) $(LIBFT_A) -o $(NAME)
 	mv $(OBJS) $(OBJ_PATH)
 
