@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   moves_a.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/07 19:24:55 by taboterm          #+#    #+#             */
-/*   Updated: 2023/04/20 16:35:57 by taboterm         ###   ########.fr       */
+/*   Created: 2023/04/20 18:34:49 by taboterm          #+#    #+#             */
+/*   Updated: 2023/04/20 18:44:21 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-/*
-* @param *lst: the beginning of the list
-* Return the length of the list
-*
-* Counts number of nodes in the list
-*/
-int	ft_lstsize(t_list *lst)
+void	swap_sa()
 {
-	size_t	i;
+	int node;
 
-	i = 0; //initialize counter and set to 0
-	while(lst)
-	{
-		lst = lst->next;
-		i++; //step thruogh list until lst = NULL
-	}
-	ft_printf("The length of list: %d\n", i);
-	return (i); //return count
+	node = 1;
+	if(node == 1 || node >=3)
+		exit (1);
+	else if (node <= 2)
+		ft_swap_sa();
+	// do nothing if there is only one number
+}
+
+void	swap_sb()
+{
+	
 }

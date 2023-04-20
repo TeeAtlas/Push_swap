@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   sort_a.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/07 19:24:55 by taboterm          #+#    #+#             */
-/*   Updated: 2023/04/20 16:35:57 by taboterm         ###   ########.fr       */
+/*   Created: 2023/04/20 18:05:08 by taboterm          #+#    #+#             */
+/*   Updated: 2023/04/20 18:50:41 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
 /*
-* @param *lst: the beginning of the list
-* Return the length of the list
-*
-* Counts number of nodes in the list
+*  
+*  all void fuctions becuase they are actions and not returning anything
+*  if it's two numbers and the first is larger swap
 */
-int	ft_lstsize(t_list *lst)
-{
-	size_t	i;
 
-	i = 0; //initialize counter and set to 0
-	while(lst)
-	{
-		lst = lst->next;
-		i++; //step thruogh list until lst = NULL
-	}
-	ft_printf("The length of list: %d\n", i);
-	return (i); //return count
+void	if_one_two(char **argv)
+{
+	t_stack	*temp;
+	int 	node;
+
+	node = 1;
+	temp = *stack_a;
+	if(node == 1 || node >=3)
+		exit (1);
+	else if (node <= 2)
+		ft_swap_sa();
+	// do nothing if there is only one number
 }

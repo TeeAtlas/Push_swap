@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 20:01:16 by taboterm          #+#    #+#             */
-/*   Updated: 2023/04/18 20:43:24 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/04/20 18:11:02 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ typedef struct s_stack
 } t_stack;
 
 int		main(int argc, char **argv);
+
+/* parsing and checks */
 void	input_check(int argc, char **argv);
 int		*valid_int(int argc, char **argv);
 int		is_dup(char **argv);
