@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:32:17 by taboterm          #+#    #+#             */
-/*   Updated: 2023/04/20 18:31:58 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/04/20 22:06:50 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ int	main(int argc, char **argv)
 	t_list	*stack_a;
 	
 	i = 1;
-	/* if one or two function */
 	/* create rotate and swap functon */
 	/* if three number easy two moves */
 	/* if more that's when we need to start creating functions to sort numbers and stack_b */

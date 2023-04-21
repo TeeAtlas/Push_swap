@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 20:01:16 by taboterm          #+#    #+#             */
-/*   Updated: 2023/04/20 18:11:02 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/04/21 07:54:52 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,8 @@ int		main(int argc, char **argv);
 void	input_check(int argc, char **argv);
 int		*valid_int(int argc, char **argv);
 int		is_dup(char **argv);
+
+/* sorting */
+void	if_onetwothree(int argc, char **argv);
 
 #endif 
