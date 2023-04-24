@@ -6,29 +6,30 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 18:34:49 by taboterm          #+#    #+#             */
-/*   Updated: 2023/04/21 18:43:09 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/04/24 11:45:56 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+/* sorting stack only if number on the top is higher than the bottom 
+and swap so as to arrange in ascending order 
+same operation as ft_swap from exam basic operation requires two ints
+and follows a pretty easy pattern of temp - a - a - b - b - temp 
+full circle*/
 
-/* sorting stack only if number on the top is higher than the bottom */
-/* and swap so as to arrange in ascending order */
-
-void	swap_sa(t_stack **stack_a, int print)
-{
-	t_stack	*a;
-	int *temp; //temp pointer to fist element
-
-	temp = (*stack_a)->next;
-	(*stack_a)->next = temp->next;
-	temp->next = (*stack_a)->next->next;
-	(*stack_a)->next->next = temp;
-	if (print != 0)
-		write(1, "sa\n", 3);
-}
-
-void	swap_sb()
-{
+void	swap_sa(t_stack **stack_a)
+{	
+	printf("swap_print\n");
+	t_stack *temp;
 	
+	temp = *stack_a;
+	if(!temp || temp->next)
+		return ;
+	*stack_a = (*stack_a)->next;
+	(*stack_a)->next = temp;
 }
+
+// void	swap_sb()
+// {
+	
+// }

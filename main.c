@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:32:17 by taboterm          #+#    #+#             */
-/*   Updated: 2023/04/20 22:06:50 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/04/24 10:48:11 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	print_table(t_list *lst)
 	while (i <= n && temp != NULL)
 	{
 		printf("Index:%d   |  %ld   | tbd values\n", i, temp->content);
-		ptr = ptr->next;
+		temp = temp->next;
 		i++;
 	}
 	printf("-----------------------------\n\n");

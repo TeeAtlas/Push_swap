@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 18:05:08 by taboterm          #+#    #+#             */
-/*   Updated: 2023/04/21 18:41:00 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/04/24 10:54:23 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	if_onetwothree(int argc, char **argv)
 	 	exit (1);
 	}
 	else if(argc == 3)
-		swap_sa((t_stack**)argv, 1);
-	else if(argc == 4)
-		under_four();
+		swap_sa((t_stack**)argv);
+	// else if(argc == 4)
+	// 	under_four();
 }
