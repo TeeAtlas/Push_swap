@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:32:17 by taboterm          #+#    #+#             */
-/*   Updated: 2023/04/24 10:48:11 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/04/24 14:21:57 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 /* all checks throw 1 flag if ok and 0 if not */
 /* start at argc[1], because argc[0] is executable */
 
-void	print_table(t_list *lst)
+void	print_table(t_list *stack_a)
 {
 	int n;
 	int i;
 	t_list *temp;
 
 	n = 20;
-	temp = lst;
+	temp = stack_a;
 	i = 1;
 	printf("-----------------------------\n");
 	printf("Element | Value | n\n");

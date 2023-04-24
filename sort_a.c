@@ -6,19 +6,23 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 18:05:08 by taboterm          #+#    #+#             */
-/*   Updated: 2023/04/24 10:54:23 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/04/24 15:01:09 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*
+/**
 *  
 *  all void fuctions becuase they are actions and not returning anything
 *  if it's two numbers and the first is larger swap
+*
+*  @note previously I delcared argc and argv but because argv is an array of 
+* pointers to characters i could not start to swap so I had to pass a pointer to 
+* linked list of integers
 */
 
-void	if_onetwothree(int argc, char **argv)
+void	if_one_two(int argc, char **argv)
 {
 	if(argc <= 2)
 	{
@@ -26,7 +30,7 @@ void	if_onetwothree(int argc, char **argv)
 	 	exit (1);
 	}
 	else if(argc == 3)
-		swap_sa((t_stack**)argv);
+		swap_sa((t_list **)&argv);
 	// else if(argc == 4)
 	// 	under_four();
 }

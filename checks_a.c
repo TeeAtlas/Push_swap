@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 16:03:58 by taboterm          #+#    #+#             */
-/*   Updated: 2023/04/24 10:58:25 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/04/24 15:08:15 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,12 +82,18 @@ void	input_check(int argc, char **argv)
 {
 	int	*int_array;
 	int	duplicate;
+	t_list *stack_a;
 	
 	if (argc <= 2)
 		exit(write(2, "Error: invalid array\n", 22));
 	int_array = valid_int(argc, argv);
 	duplicate = is_dup(argv);
-	printf("hello\n");
-	if_onetwothree(argc, argv);
-	printf("hello\n");
+	printf("input check - hhello\n");
+	if_one_two(argc, argv);
+
+	stack_a = NULL;
+	while (*++argv)
+		ft_lstadd_back(&stack_a, ft_lstnew_mod(ft_atoi_mod(*argv)));
+	print_table(stack_a);
+	
 }
