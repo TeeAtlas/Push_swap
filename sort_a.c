@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 18:05:08 by taboterm          #+#    #+#             */
-/*   Updated: 2023/04/24 15:01:09 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/04/26 14:38:11 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,18 @@
 * linked list of integers
 */
 
-void	if_one_two(int argc, char **argv)
-{
-	if(argc <= 2)
-	{
-		write(2, "Nothing to swap\n", 17);
-	 	exit (1);
-	}
-	else if(argc == 3)
-		swap_sa((t_list **)&argv);
-	// else if(argc == 4)
-	// 	under_four();
-}
+
+//below works for an array but not a liked list
+
+// void	if_one_two(int argc, char **argv)
+// {
+// 	if(argc <= 2)
+// 	{
+// 		write(2, "Nothing to swap\n", 17);
+// 	 	exit (1);
+// 	}
+// 	else if(argc == 3)
+// 		swap_sa((t_list **)&argv);
+// 	// else if(argc == 4)
+// 	// 	under_four();
+// }

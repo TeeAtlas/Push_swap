@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:32:17 by taboterm          #+#    #+#             */
-/*   Updated: 2023/04/24 14:21:57 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/04/26 20:39:56 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	print_table(t_list *stack_a)
 	temp = stack_a;
 	i = 1;
 	printf("-----------------------------\n");
-	printf("Element | Value | n\n");
+	printf("Element | Stack_a | n\n");
 	printf("-----------------------------\n");
 	while (i <= n && temp != NULL)
 	{
@@ -54,6 +54,7 @@ int	main(int argc, char **argv)
 		ft_lstadd_back(&stack_a, ft_lstnew_mod(ft_atoi_mod(argv[i])));
 		i++;
 	}
+	swap_sa(&stack_a);
 	printf("-----------------------------\n");
 	ft_lstsize(stack_a);
 	print_table(stack_a);

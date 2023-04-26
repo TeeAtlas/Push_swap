@@ -6,7 +6,7 @@
 #    By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/15 11:39:37 by taboterm          #+#    #+#              #
-#    Updated: 2023/04/24 10:49:31 by taboterm         ###   ########.fr        #
+#    Updated: 2023/04/26 17:52:34 by taboterm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ OBJ_PATH = obj/
 LIBFT = libft
 
 # Source and object files
-SRCS = main.c checks_a.c sort_a.c moves_a.c\
+SRCS = main.c checks.c operations_a.c\
 
 OBJS = $(SRCS:%.c=%.o)
 
