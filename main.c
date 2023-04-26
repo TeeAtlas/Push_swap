@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:32:17 by taboterm          #+#    #+#             */
-/*   Updated: 2023/04/26 20:39:56 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/04/26 20:49:11 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,16 @@ void	print_table(t_list *stack_a)
 	n = 20;
 	temp = stack_a;
 	i = 1;
-	printf("-----------------------------\n");
-	printf("Element | Stack_a | n\n");
-	printf("-----------------------------\n");
+	ft_printf("-----------------------------\n");
+	ft_printf("Element | Stack_a | n\n");
+	ft_printf("-----------------------------\n");
 	while (i <= n && temp != NULL)
 	{
-		printf("Index:%d   |  %ld   | tbd values\n", i, temp->content);
+		ft_printf("Index:%d   |  %ld   | tbd values\n", i, temp->content);
 		temp = temp->next;
 		i++;
 	}
-	printf("-----------------------------\n\n");
+	ft_printf("-----------------------------\n\n");
 }
 
 
@@ -54,8 +54,9 @@ int	main(int argc, char **argv)
 		ft_lstadd_back(&stack_a, ft_lstnew_mod(ft_atoi_mod(argv[i])));
 		i++;
 	}
-	swap_sa(&stack_a);
-	printf("-----------------------------\n");
+	// swap_sa(&stack_a);
+	rotate_ra(&stack_a);
+	ft_printf("-----------------------------\n");
 	ft_lstsize(stack_a);
 	print_table(stack_a);
 	return (0);

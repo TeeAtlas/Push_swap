@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 20:01:16 by taboterm          #+#    #+#             */
-/*   Updated: 2023/04/26 18:01:28 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/04/26 20:47:54 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ int		is_dup(char **argv);
 /* operations_b */
 void	swap_sa(t_list **stack_a);
 void	swap_sb(t_list **stack_b);
+void	rotate_ra(t_list **stack_a);
 
-#endif 
+#endif

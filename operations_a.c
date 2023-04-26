@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 18:34:49 by taboterm          #+#    #+#             */
-/*   Updated: 2023/04/26 20:39:43 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/04/26 21:04:52 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,20 @@ same operation as ft_swap from exam basic operation requires two ints
 and follows a pretty easy pattern of temp - a - a - b - b - temp 
 full circle*/
 
-void	swap_sa(t_list **stack_a)
-{
-	t_list	*element_1;
-	t_list	*element_2;
-	t_list	*element_3;
+// void	swap_sa(t_list **stack_a)
+// {
+// 	t_list	*element_1;
+// 	t_list	*element_2;
+// 	t_list	*element_3;
 	
-	element_1 = (*stack_a); //address to element_1
-	element_2 = element_1->next; // address to element_2
-	element_3 = element_2->next; // address to element_3
-	element_2->next = element_1; // address 2 stored add -> to 3 
-	element_1->next = element_3; 
-	*stack_a = element_2; //address to node 2 stored in 2 assinged to stack a
-	write(1, "sa\n", 3);
-}
+// 	element_1 = (*stack_a); //address to element_1
+// 	element_2 = element_1->next; // address to element_2
+// 	element_3 = element_2->next; // address to element_3
+// 	element_2->next = element_1; // address 2 stored add -> to 3 
+// 	element_1->next = element_3; 
+// 	*stack_a = element_2; //address to node 2 stored in 2 assinged to stack a
+// 	write(1, "sa\n", 3);
+// }
 
 // void	swap_sb(t_list **stack_b)
 // {
@@ -48,27 +48,27 @@ void	swap_sa(t_list **stack_a)
 // }
 
 
-// /* all elements shifted down one so last becomes first */
-// void	rotate_ra(t_list **stack_a)
-// {
-// 	t_list		*current;
-// 	t_list		*last;
-// 	long int	i;
-
-// 	i = 0;
-// 	current = (*stack_a);
-// 	current->next = current;
-// 	last = (current->next = NULL);
-// 	/*so current elemnet always stores the address to the 
-// 	previous element and pointer to next*/
-// 	while (!last)
-// 	{
-// 		current = current->next;
-// 		i++;
-// 	}
-// 	(*stack_a)->next = last;
-// 	write(1, "ra\n", 3);
-// 	/* move all elements down one 
-// 	then move last element with NULL to 
-// 	top of list */
-// }
+/* all elements shifted down one so last becomes first */
+void	rotate_ra(t_list **stack_a)
+{
+	t_list		*first;
+	t_list		*current;
+	t_list		*last;
+	t_list		*temp;
+	
+	i = 0;
+	first = (*stack_a);
+	temp = (*stack_a);
+	current = (*stack_a)->next;
+	current->next = current;
+	last = (current->next = NULL);
+	/*so current elemnet always stores the address to the 
+	previous element and pointer to next*/
+	while (!last)
+		current = current->next;
+	(*stack_a)->next = last;
+	write(1, "ra\n", 3);
+	/* move all elements down one 
+	then move last element with NULL to 
+	top of list */
+}
