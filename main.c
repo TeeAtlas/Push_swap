@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:32:17 by taboterm          #+#    #+#             */
-/*   Updated: 2023/04/27 12:47:04 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/04/27 17:43:32 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,19 @@ void	print_table(t_list *stack_a)
 	printf("-----------------------------\n\n");
 }
 
+// void	operations(t_list **stack)
+// {
+// 	t_list	*stack_a;
+// 	t_list	*stack_b;
+
+// 	swap_sa(&stack_a);
+// 	swap_sb(&stack_b);
+// 	rotate_ra(&stack_a);
+// 	rotate_rb(&stack_b);
+// 	rotate_rra(&stack_a);
+// 	rotate_rrb(&stack_b);
+// }
+
 
 int	main(int argc, char **argv)
 {
@@ -55,7 +68,8 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	// swap_sa(&stack_a);
-	rotate_ra(&stack_a);
+	// rotate_ra(&stack_a);
+	rotate_rra(&stack_a);
 	ft_printf("-----------------------------\n");
 	ft_lstsize(stack_a);
 	print_table(stack_a);

@@ -6,37 +6,11 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 18:34:49 by taboterm          #+#    #+#             */
-/*   Updated: 2023/04/27 13:49:35 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/04/27 17:49:32 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// /* all elements shifted up one so first element becomes last */
-// void	rotate_ra(t_list **stack_a)
-// {
-// 	t_list		*first;
-// 	t_list		*current;
-// 	t_list		*last;
-	
-// 	first = (*stack_a);
-// 	current = first->next;
-// 	last = current;
-// 	if (!*stack_a || !(*stack_a->next)) //if stack empty or one element
-// 		return ;
-// 	/* search list to find last element */
-// 	while (current != NULL)
-// 	{ 
-// 		last = current; // set last to current element
-// 		current = current->next; // move current to the next element
-// 	}
-// 	/* now we rearrange list to rotate elements */
-// 	current = (*stack_a); //reset current to first element
-// 	(*stack_a) = (*stack_a)->next; // set next pointer of fist element
-// 	current->next = NULL; // move first element to the end
-// 	last->next = current; // set next pointer to last element
-// 	write(1, "ra\n", 3); //print instruction for debugging
-// }
 
 void	rotate_ra(t_list **stack_a)
 {
@@ -53,46 +27,72 @@ void	rotate_ra(t_list **stack_a)
 	write(1, "ra\n", 3);
 }
 
+void	rotate_rb(t_list **stack_b)
+{
+	t_list *last;
 
+	last = *stack_b;
+	if (!*stack_b || !(*stack_b)->next)
+		return ;
+	while (last->next != NULL) //while current element is not NULL
+		last = last->next; //keep looking for last element
+	//reorder the elements
+	last->next = *stack_b; //last->next = NULL and set to point to fist element
+	*stack_b = (*stack_b)->next; //2nd element now first moving first to end of stack
+	last->next->next = NULL; //sets mext pointer of new last element to null
+	//next next to null we disconnect first element from stack making new last elment
+}
 
+//reverse rotate bottom element to top
+void	rotate_rra(t_list **stack_a)
+{
+	t_list	*first;
+	t_list	*current;
 
+	first = (*stack_a);
+	current = first;
+	if (!*stack_a || !(*stack_a)->next) //if list is empty or only one node bounce
+		return ;
+	while(current->next != NULL) //looking for second to last element
+	{
+		first = current;
+		current = current->next;
+	}
+	first->next = NULL; //remove last element from the list
+	current->next = *stack_a; // adds last element to the top of the list
+	*stack_a = current;
+	write(1, "rra\n", 4);
+}
 
-// /* elements of stack_b shifted down one so last becomes first */
-// void	rotate_rb(t_list **stack_b)
+//reverse rotate bottom element to top
+void	rotate_rrb(t_list **stack_b)
+{
+	t_list	*first;
+	t_list	*current;
+	
+	first = (*stack_b);
+	current = first;
+	if (!*stack_b || !(*stack_b)->next)
+		return ;
+	while(current->next != NULL)
+	{
+		first = current;
+		current = current->next;
+	}
+	first->next = NULL;
+	current->next = *stack_b;
+	*stack_b = current;
+	write(1, "rrb\n", 4);
+}
+
+// // rotate top to bottom of a and b at the same time
+// void	rotate_rr(t_list **stack_a, t_list **stack_b)
 // {
-// 	t_list	*first;
-// 	t_list	*current;
-// 	t_list	*last;
-
-// 	first = (*stack_b);
-// 	current	= first->next;
-// 	last = current;
-// 	if (!*stack_b || (*stack_b->next))
-// 		return ;
-// 	while (current != NULL)
-// 	{
-// 		last = current;
-// 		current = current->next;
-// 	}
-// 	current = (*stack_b);
-// 	(*stack_b) = (*stack_b)->next;
-// 	current->next = NULL;
-// 	last->next = current;
-// 	write(1, "rb\n", 3);
+	
 // }
 
-// void	rotate_rb(t_list **stack_a)
+// // rotate bottom to top of a and b at the same time
+// void	rotate_rrr(t_list **stack_a, t_list **stack_b)
 // {
-// 	t_list *last;
-
-// 	last = *stack_b
-// 	if (!*stack_b || !(*stack_b)->next)
-// 		return ;
-// 	while (lst->next != NULL) //while current element is not NULL
-// 		last = last->next; //keep looking for last element
-// 	//reorder the elements
-// 	last->next = *stack_b; //last->next = NULL and set to point to fist element
-// 	*stack_b = (*stack_b)->next; //2nd element now first moving first to end of stack
-// 	last->next->next = NULL; //sets mext pointer of new last element to null
-// 	//next next to null we disconnect first element from stack making new last elment
+	
 // }
