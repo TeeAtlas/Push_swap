@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:32:17 by taboterm          #+#    #+#             */
-/*   Updated: 2023/04/26 20:49:11 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/04/27 12:47:04 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,16 @@ void	print_table(t_list *stack_a)
 	n = 20;
 	temp = stack_a;
 	i = 1;
-	ft_printf("-----------------------------\n");
-	ft_printf("Element | Stack_a | n\n");
-	ft_printf("-----------------------------\n");
+	printf("-----------------------------\n");
+	printf("Index | Value | n\n");
+	printf("-----------------------------\n");
 	while (i <= n && temp != NULL)
 	{
-		ft_printf("Index:%d   |  %ld   | tbd values\n", i, temp->content);
+		ft_printf("    %d   |  %d   | tbd values\n", i, temp->content);
 		temp = temp->next;
 		i++;
 	}
-	ft_printf("-----------------------------\n\n");
+	printf("-----------------------------\n\n");
 }
 
 
