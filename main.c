@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:32:17 by taboterm          #+#    #+#             */
-/*   Updated: 2023/04/27 17:43:32 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/05 19:54:57 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,39 @@ void	print_table(t_list *stack_a)
 	t_list *temp;
 
 	n = 20;
-	temp = stack_a;
 	i = 1;
+	temp = stack_a;
 	printf("-----------------------------\n");
-	printf("Index | Value | n\n");
+	printf("Index | stack_a | stack_b_soon\n");
 	printf("-----------------------------\n");
 	while (i <= n && temp != NULL)
 	{
-		ft_printf("    %d   |  %d   | tbd values\n", i, temp->content);
+		ft_printf("    %d   |  %d   | %d\n", i, temp->content);
 		temp = temp->next;
+		i++;
+	}
+	printf("-----------------------------\n\n");
+}
+
+void	print_table(t_list *stack_a, t_list *stack_b)
+{
+	int n;
+	int i;
+	t_list *temp;
+	t_list *temp_2;
+
+	n = 20;
+	i = 1;
+	temp = stack_a;
+	temp_2 = stack_b;
+	printf("-----------------------------\n");
+	printf("Index | stack_a | stack_b\n");
+	printf("-----------------------------\n");
+	while (i <= n && temp != NULL)
+	{
+		ft_printf("    %d   |  %d   | %d\n", i, temp->content, temp_2->content);
+		temp = temp->next;
+		temp_2 = temp_2->next;
 		i++;
 	}
 	printf("-----------------------------\n\n");
@@ -54,6 +78,7 @@ int	main(int argc, char **argv)
 {
 	int i;
 	t_list	*stack_a;
+	t_list	*stack_b;
 	
 	i = 1;
 	/* create rotate and swap functon */
@@ -70,9 +95,10 @@ int	main(int argc, char **argv)
 	// swap_sa(&stack_a);
 	// rotate_ra(&stack_a);
 	rotate_rra(&stack_a);
+	// push_pa(&stack_a, &stack_b);
 	ft_printf("-----------------------------\n");
 	ft_lstsize(stack_a);
-	print_table(stack_a);
+	print_table(stack_a;
 	return (0);
 }
 

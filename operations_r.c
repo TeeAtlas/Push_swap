@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 18:34:49 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/05 16:37:06 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/05 18:42:59 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,18 +82,18 @@ void	rotate_rrb(t_list **stack_b)
 	t_list	*first;
 	t_list	*current;
 	
-	first = (*stack_b);
+	first = (*stack_b); // both variables point to top of stack_b
 	current = first;
-	if (!*stack_b || !(*stack_b)->next)
+	if (!*stack_b || !(*stack_b)->next) // if empty or only one node, bounce
 		return ;
 	while(current->next != NULL)
 	{
-		first = current;
-		current = current->next;
+		first = current; //first then becomes second last node
+		current = current->next; // current becomes last node with pointer
 	}
-	first->next = NULL;
-	current->next = *stack_b;
-	*stack_b = current;
+	first->next = NULL; // set first pointer to null, making it last
+	current->next = *stack_b; // set current to top of list
+	*stack_b = current; // stack_b pointer points to top of list
 	write(1, "rrb\n", 4);
 }
 
