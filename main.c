@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:32:17 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/05 19:54:57 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/05 21:43:02 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,18 @@ void	print_table(t_list *stack_a)
 	i = 1;
 	temp = stack_a;
 	printf("-----------------------------\n");
-	printf("Index | stack_a | stack_b_soon\n");
+	printf("Index | stack_a \n");
 	printf("-----------------------------\n");
 	while (i <= n && temp != NULL)
 	{
-		ft_printf("    %d   |  %d   | %d\n", i, temp->content);
+		ft_printf("    %d   |  %d \n", i, temp->content);
 		temp = temp->next;
 		i++;
 	}
 	printf("-----------------------------\n\n");
 }
 
-void	print_table(t_list *stack_a, t_list *stack_b)
+void	print_table_b(t_list *stack_a, t_list *stack_b)
 {
 	int n;
 	int i;
@@ -92,13 +92,16 @@ int	main(int argc, char **argv)
 		ft_lstadd_back(&stack_a, ft_lstnew_mod(ft_atoi_mod(argv[i])));
 		i++;
 	}
+	print_table(stack_a);
+
+	push_pb(&stack_a, &stack_b);
 	// swap_sa(&stack_a);
 	// rotate_ra(&stack_a);
-	rotate_rra(&stack_a);
+	// rotate_rra(&stack_a);
 	// push_pa(&stack_a, &stack_b);
 	ft_printf("-----------------------------\n");
-	ft_lstsize(stack_a);
-	print_table(stack_a;
+	// ft_lstsize(stack_a);
+	print_table(stack_a);
 	return (0);
 }
 
@@ -107,3 +110,10 @@ ft_atoi(argv[i])  ===>  int 10
 ft_lstnew(int 10)  ===>   node containing 10
 ft_lstaddback(&stack_a, node containing 10)
 */
+
+
+
+// void print_list(*stack_a)
+// {
+// 	ehile (*temp)
+// }
