@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 20:01:16 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/08 14:48:24 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/08 20:28:07 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ void	rotate_rrr(t_list **stack_a, t_list **stack_b);
 
 /* sort */
 void	if_two(t_list **stack_a);
+void	if_three(t_list **stack_a);
 
 #endif

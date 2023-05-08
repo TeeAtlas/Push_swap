@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 12:41:37 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/05 21:20:29 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/05 21:46:49 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,3 @@ void	push_pb(t_list	**stack_a, t_list **stack_b)
 	ft_lstadd_front(stack_b, temp);
 	write(1, "pb\n", 3);
 }
-
-// void	test_push_pb()
-// {
-// 	t_list *stack_a = NULL;
-// 	t_list *stack_b = NULL;
-
-// 	int
-// }

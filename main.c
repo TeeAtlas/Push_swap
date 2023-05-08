@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:32:17 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/08 14:48:43 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/08 20:36:29 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ int	main(int argc, char **argv)
 	// rotate_rra(&stack_a);
 	// push_pb(&stack_a, &stack_b);
 	// push_pa(&stack_a, &stack_b);
-	if_two(&stack_a);
+	if_three(&stack_a);
 	ft_printf("-----------------------------\n");
 	// ft_lstsize(stack_a);
 	print_table(stack_a);
