@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 18:05:08 by taboterm          #+#    #+#             */
-/*   Updated: 2023/04/26 14:38:11 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/08 14:48:33 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,16 @@
 * linked list of integers
 */
 
+// swaps numbers if the first is larger than the second
+void	if_two(t_list **stack_a)
+{
+	t_list	*first;
+	t_list	*second;
 
-//below works for an array but not a liked list
-
-// void	if_one_two(int argc, char **argv)
-// {
-// 	if(argc <= 2)
-// 	{
-// 		write(2, "Nothing to swap\n", 17);
-// 	 	exit (1);
-// 	}
-// 	else if(argc == 3)
-// 		swap_sa((t_list **)&argv);
-// 	// else if(argc == 4)
-// 	// 	under_four();
-// }
+	first = (*stack_a);
+	second = first->next;
+	if (first->content < second->content)
+		return ;
+	else if (first->content > second->content)
+		swap_sa(stack_a);
+}

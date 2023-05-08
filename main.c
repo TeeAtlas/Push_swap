@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:32:17 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/05 21:43:02 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/08 14:48:43 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	print_table(t_list *stack_a)
 	i = 1;
 	temp = stack_a;
 	printf("-----------------------------\n");
-	printf("Index | stack_a \n");
+	printf("Index | stack \n");
 	printf("-----------------------------\n");
 	while (i <= n && temp != NULL)
 	{
@@ -81,12 +81,10 @@ int	main(int argc, char **argv)
 	t_list	*stack_b;
 	
 	i = 1;
-	/* create rotate and swap functon */
+	stack_a = NULL;
+	stack_b = NULL;
 	/* if three number easy two moves */
-	/* if more that's when we need to start creating functions to sort numbers and stack_b */
 	input_check(argc, argv);
-	
-	/* adding nodes with while loop for each number */
 	while(argv[i])
 	{
 		ft_lstadd_back(&stack_a, ft_lstnew_mod(ft_atoi_mod(argv[i])));
@@ -94,14 +92,16 @@ int	main(int argc, char **argv)
 	}
 	print_table(stack_a);
 
-	push_pb(&stack_a, &stack_b);
 	// swap_sa(&stack_a);
 	// rotate_ra(&stack_a);
 	// rotate_rra(&stack_a);
+	// push_pb(&stack_a, &stack_b);
 	// push_pa(&stack_a, &stack_b);
+	if_two(&stack_a);
 	ft_printf("-----------------------------\n");
 	// ft_lstsize(stack_a);
 	print_table(stack_a);
+	// print_table_b(stack_a, stack_b);
 	return (0);
 }
 
