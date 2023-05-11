@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 18:05:08 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/08 21:25:51 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/11 14:57:12 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,16 +49,18 @@ void	if_three(t_list **stack_a)
 	t = s->next;
 	if (stack_a != NULL)
 	{
-		if (f->content < s->content && f->content < t->content && s->content < t->content) //if 1 2 3
+		if (f->content < s->content && f->content < t->content && s->content < t->content) //if 1 2 3 = nothing to be done
 			return ;
-		else if (f->content > s->content && f->content > t->content && s->content > t->content) // 3 2 1
-			rotate_ra(stack_a);
-		else if (f->content > s->content && f->content < t->content && t->content < f->content) // if 2 1 3
-			swap_sa(stack_a);
-		else if (f->content < s->content && f->content < t->content && t->content > s->content) // if 3 1 2
+		else if (f->content > s->content && f->content > t->content && s->content > t->content && t->content < s->content) // 3 2 1
 		{
-			rotate_ra(stack_a);
 			swap_sa(stack_a);
+			rotate_rra(stack_a);
 		}
+		else if (f->content > s->content && f->content < t->content && s->content < t->content) // if 2 1 3
+			swap_sa(stack_a);
+		else if (f->content > s->content && f->content > t->content && s->content < t->content) // if 3 1 2 
+			rotate_ra(stack_a);
+		else if (f->content < s->content && f->content > t->content && s->content > t->content) // if 2 3 1 
+			rotate_rra(stack_a);
 	}
 }
