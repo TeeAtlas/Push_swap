@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 18:05:08 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/11 14:57:12 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/11 18:02:51 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,27 +40,57 @@ void	if_two(t_list **stack_a)
 
 void	if_three(t_list **stack_a)
 {
-	t_list	*f;
-	t_list	*s;
-	t_list	*t;
+	t_list	*a;
+	t_list	*b;
+	t_list	*c;
 
-	f = (*stack_a);
-	s = f->next;
-	t = s->next;
+	a = (*stack_a);
+	b = a->next;
+	c = b->next;
 	if (stack_a != NULL)
 	{
-		if (f->content < s->content && f->content < t->content && s->content < t->content) //if 1 2 3 = nothing to be done
-			return ;
-		else if (f->content > s->content && f->content > t->content && s->content > t->content && t->content < s->content) // 3 2 1
+		if (a->content < b->content && a->content < c->content && b->content > c->content) // if 1 3 2
+		{
+			rotate_rra(stack_a);
+			swap_sa(stack_a);
+		}
+		if (a->content > b->content && a->content > c->content && b->content > c->content && c->content < b->content) // 3 2 1
 		{
 			swap_sa(stack_a);
 			rotate_rra(stack_a);
 		}
-		else if (f->content > s->content && f->content < t->content && s->content < t->content) // if 2 1 3
-			swap_sa(stack_a);
-		else if (f->content > s->content && f->content > t->content && s->content < t->content) // if 3 1 2 
+		if (a->content > b->content && a->content > c->content && b->content < c->content) // if 3 1 2 
 			rotate_ra(stack_a);
-		else if (f->content < s->content && f->content > t->content && s->content > t->content) // if 2 3 1 
+		if (a->content > b->content && a->content < c->content && b->content < c->content) // if 2 1 3
+			swap_sa(stack_a);
+		if (a->content < b->content && a->content > c->content && b->content > c->content) // if 2 3 1 
 			rotate_rra(stack_a);
+		else 
+			return ;
 	}
+}
+
+void push_two_b(t_list **stack_a, t_list **stack_b)
+{
+	if (stack_a != NULL)
+	{
+		// if four = do I need if argc is 5 one call for function but if 6 two calls?
+		push_pb(stack_a, stack_b);
+		push_pb(stack_a, stack_b);
+	}
+}
+
+void	sa_four(t_list **stack_a)
+{
+	// if first element is greater than last swap first with last
+	// if not leave it
+}
+/* sorts stack of five elements in ascending order */
+void	if_five(t_list **stack_a, t_list **stack_b)
+{
+	push_two_b(stack_a, stack_b);
+	if (stack_a)
+		if_three(stack_a);
+	push_pa(stack_a, stack_b);
+	
 }
