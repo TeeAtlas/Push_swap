@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:32:17 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/16 17:33:05 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/16 19:14:58 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,21 @@ void	print_table(t_list *stack_a)
 	printf("-----------------------------\n\n");
 }
 
+int	stack_len(t_list *stack_a)
+{
+	int i;
+	t_list *temp;
+
+	i = 1;
+	temp = stack_a;
+	while (temp != NULL)
+	{
+		temp = temp->next;
+		i++;
+	}
+	return(i);
+}
+
 void	print_table_b(t_list *stack_a, t_list *stack_b)
 {
 	int n;
@@ -60,28 +75,18 @@ void	print_table_b(t_list *stack_a, t_list *stack_b)
 	printf("-----------------------------\n\n");
 }
 
-// void	operations(t_list **stack)
-// {
-// 	t_list	*stack_a;
-// 	t_list	*stack_b;
-
-// 	swap_sa(&stack_a);
-// 	swap_sb(&stack_b);
-// 	rotate_ra(&stack_a);
-// 	rotate_rb(&stack_b);
-// 	rotate_rra(&stack_a);
-// 	rotate_rrb(&stack_b);
-// }
-
-
 int	main(int argc, char **argv)
 {
 	int i;
+	int j;
 	t_list	*stack_a;
+	t_list	*stack_a_copy;
 	t_list	*stack_b;
 	
 	i = 1;
+	j = 1;
 	stack_a = NULL;
+	stack_a_copy = NULL;
 	stack_b = NULL;
 	/* if three number easy two moves */
 	input_check(argc, argv);
@@ -90,10 +95,10 @@ int	main(int argc, char **argv)
 		ft_lstadd_back(&stack_a, ft_lstnew_mod(ft_atoi_mod(argv[i])));
 		i++;
 	}
-	while(argv[i])
+	while(argv[j])
 	{
-		ft_lstadd_back(&stack_a, ft_lstnew_mod(ft_atoi_mod(argv[i])));
-		i++;
+		ft_lstadd_back(&stack_a_copy, ft_lstnew_mod(ft_atoi_mod(argv[j])));
+		j++;
 	}
 	print_table(stack_a);
 
@@ -102,8 +107,8 @@ int	main(int argc, char **argv)
 	// rotate_rra(&stack_a);
 	// push_pb(&stack_a, &stack_b);
 	// push_pa(&stack_a, &stack_b);
-	// if_three(&stack_a);
-	if_four(&stack_a, &stack_b);
+	if_three(&stack_a);
+	// if_four(&stack_a, &stack_b);
 	// if_five(&stack_a, &stack_b);
 	ft_printf("-----------------------------\n");
 	// ft_lstsize(stack_a);

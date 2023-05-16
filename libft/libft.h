@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 13:46:07 by taboterm          #+#    #+#             */
-/*   Updated: 2023/04/27 12:14:21 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/16 17:06:01 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 typedef struct s_list
 {
 	long int			content; // integer element 4 bits
-	// int					index; // list of all values that must be sorted
+	int					index; // list of all values that must be sorted
 	// int					pos; //current positon in stack
 	// int					target_pos; //pos where it should be
 	// int					num_ops_1; //number of operations stack_a

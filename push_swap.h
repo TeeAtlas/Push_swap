@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 20:01:16 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/16 18:52:42 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/16 19:14:43 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int		main(int argc, char **argv);
 /* printing lists */
 void	print_table(t_list *stack_a);
 void	print_table_b(t_list *stack_a, t_list *stack_b);
+int		stack_len(t_list *stack_a);
 
 /* checks_a */
 void	input_check(int argc, char **argv);
@@ -51,6 +52,5 @@ void	if_four(t_list **stack_a, t_list **stack_b);
 void	push_two_b(t_list **stack_a, t_list **stack_b);
 
 /* utilities */
-int		stack_len(t_list **stack);
 
 #endif
