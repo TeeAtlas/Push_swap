@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 18:05:08 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/11 18:02:51 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/15 15:47:06 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,17 +80,48 @@ void push_two_b(t_list **stack_a, t_list **stack_b)
 	}
 }
 
-void	sa_four(t_list **stack_a)
+void	if_four(t_list **stack_a, t_list **stack_b)
 {
-	// if first element is greater than last swap first with last
-	// if not leave it
-}
-/* sorts stack of five elements in ascending order */
-void	if_five(t_list **stack_a, t_list **stack_b)
-{
-	push_two_b(stack_a, stack_b);
-	if (stack_a)
+	// t_list *a;
+	// t_list *b;
+	// t_list *c;
+	// t_list *d;
+
+	// a = (*stack_a);
+	// b = a->next;
+	// c = b->next;
+	// d = c->next;
+	if(stack_a != NULL)
+	{
+		push_pb(stack_a, stack_b);
 		if_three(stack_a);
-	push_pa(stack_a, stack_b);
-	
+		push_pa(stack_a, stack_b);
+	}
 }
+
+// /* sorts stack of five elements in ascending order */
+// void	if_five(t_list **stack_a, t_list **stack_b)
+// {
+// 	t_list *a;
+// 	t_list *b;
+// 	t_list *c;
+// 	t_list *d;
+// 	t_list *e;
+
+// 	a = (*stack_a);
+// 	b = a->next;
+// 	c = b->next;
+// 	d = c->next;
+// 	e = d->next;
+	
+// 	push_two_b(stack_a, stack_b);
+// 	if (stack_a)
+// 		if_three(stack_a);
+// 	if (stack_b)
+// 		if_two(stack_b);
+// 	push_pa(stack_a, stack_b);
+// 	if (stack_a)
+// 	{
+// 		if ()
+// 	}
+// }
