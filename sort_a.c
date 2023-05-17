@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 18:05:08 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/15 15:47:06 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/17 11:01:39 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ void	if_two(t_list **stack_a)
 	second = first->next;
 	while (!*stack_a)
 		return ;
-	if (first->content < second->content)
+	if (first->val < second->val)
 		return ;
-	else if (first->content > second->content)
+	else if (first->val > second->val)
 		swap_sa(stack_a);
 }
 
@@ -49,21 +49,21 @@ void	if_three(t_list **stack_a)
 	c = b->next;
 	if (stack_a != NULL)
 	{
-		if (a->content < b->content && a->content < c->content && b->content > c->content) // if 1 3 2
+		if (a->val < b->val && a->val < c->val && b->val > c->val) // if 1 3 2
 		{
 			rotate_rra(stack_a);
 			swap_sa(stack_a);
 		}
-		if (a->content > b->content && a->content > c->content && b->content > c->content && c->content < b->content) // 3 2 1
+		if (a->val > b->val && a->val > c->val && b->val > c->val && c->val < b->val) // 3 2 1
 		{
 			swap_sa(stack_a);
 			rotate_rra(stack_a);
 		}
-		if (a->content > b->content && a->content > c->content && b->content < c->content) // if 3 1 2 
+		if (a->val > b->val && a->val > c->val && b->val < c->val) // if 3 1 2 
 			rotate_ra(stack_a);
-		if (a->content > b->content && a->content < c->content && b->content < c->content) // if 2 1 3
+		if (a->val > b->val && a->val < c->val && b->val < c->val) // if 2 1 3
 			swap_sa(stack_a);
-		if (a->content < b->content && a->content > c->content && b->content > c->content) // if 2 3 1 
+		if (a->val < b->val && a->val > c->val && b->val > c->val) // if 2 3 1 
 			rotate_rra(stack_a);
 		else 
 			return ;
