@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:32:17 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/18 17:34:23 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/19 17:45:58 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,13 +67,13 @@ int	main(int argc, char **argv)
 	// rotate_rra(&stack_a);
 	// push_pb(&stack_a, &stack_b);
 	// push_pa(&stack_a, &stack_b);
-	if_three(&stack_a);
+	// if_three(&stack_a);
 	// if_four(&stack_a, &stack_b);
 	// if_five(&stack_a, &stack_b);
+	min_value(&stack_a);
 	ft_printf("-----------------------------\n");
 	// ft_lstsize(stack_a);
 	print_table(stack_a);
-	ft_printf("Min Value: %d\n", min_position(&stack_a));
 	// print_table_b(stack_a, stack_b);
 	return (0);
 }
@@ -83,10 +83,3 @@ ft_atoi(argv[i])  ===>  int 10
 ft_lstnew(int 10)  ===>   node containing 10
 ft_lstaddback(&stack_a, node containing 10)
 */
-
-
-
-// void print_list(*stack_a)
-// {
-// 	ehile (*temp)
-// }
