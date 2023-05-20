@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:47:14 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/17 15:19:38 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/20 15:09:19 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,22 @@
 /* swap variable is used to determine whether any swaps */
 /* were made during the pass throught the linked list*/
 /* the swap condition prevents unneccessary iterations */
+
+void	update_index(t_list **stack)
+{
+	int		i;
+	t_list	*current;
+	
+	i = 1;
+	current = (*stack);
+	while (current != NULL)
+	{
+		current->index = i;
+		i++;
+		ft_printf("index: %d\n", current->index);
+		current = current->next;
+	}
+}
 
 void	index_val_swap(t_list **stack)
 {
