@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:47:14 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/20 15:09:19 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/20 15:59:00 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,22 @@ void	update_index(t_list **stack)
 	{
 		current->index = i;
 		i++;
-		ft_printf("index: %d\n", current->index);
 		current = current->next;
+	}
+}
+
+void	assign_indexes(t_list **stack, t_list **stack_cpy)
+{
+	t_list *current;
+	t_list *current_cpy;
+	
+	current = (*stack); // pointers to iterate through stacks
+	current_cpy = (*stack_cpy);
+	while (current != NULL && current_cpy != NULL)
+	{
+		current->index = current_cpy->index; // assing index from cpy to original stack
+		current = current->next; // move to next node in original stack
+		current_cpy = current_cpy->next; // move to next node in copy
 	}
 }
 
