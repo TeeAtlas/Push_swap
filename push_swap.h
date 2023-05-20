@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 20:01:16 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/19 17:21:49 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/20 15:46:32 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@
 int		main(int argc, char **argv);
 
 /* main */
-void	print_table(t_list *stack_a);
+// void	print_table(t_list *stack_a);
+void	print_nodes(t_list **stack);
 
 /* checks_a */
 void	input_check(int argc, char **argv);
@@ -51,9 +52,15 @@ void	if_four(t_list **stack_a, t_list **stack_b);
 void	push_two_b(t_list **stack_a, t_list **stack_b);
 
 /* indexing */
-int		min_value(t_list **stack);
-void	index_val_swap(t_list **stack);
+// t_list 	*sort_by_index(t_list **stack);
+// int		min_value(t_list **stack);
+// void	index_val_swap(t_list **stack);
+void	update_index(t_list **stack);
+void	assign_indexes(t_list **stack, t_list **stack_cpy);
 void	bubble_sort(t_list **stack);
 int		stack_len(t_list *stack_a);
+
+/* freeing */
+void	free_stack(t_list **stack);
 
 #endif
