@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:32:17 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/20 12:00:21 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/20 15:57:36 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,19 +73,25 @@ int	main(int argc, char **argv)
 		ft_lstadd_back(&stack_a_copy, ft_lstnew_mod(ft_atoi_mod(argv[j]), j));
 		j++;
 	}
-	print_nodes(&stack_a);
+	print_nodes(&stack_a_copy);
 	// bubble_sort(&stack_a_copy);
+	// ft_lstsize(stack_a);
 	// swap_sa(&stack_a);
 	// rotate_ra(&stack_a);
 	// rotate_rra(&stack_a);
 	// push_pb(&stack_a, &stack_b);
 	// push_pa(&stack_a, &stack_b);
-	sort_by_index(&stack_a);
-	// if_three(&stack_a); 
+	// sort_by_index(&stack_a);
+	if_three(&stack_a_copy); 
+	update_index(&stack_a_copy);
+	assign_indexes(&stack_a, &stack_a_copy);
 	// if_four(&stack_a, &stack_b);
 	// if_five(&stack_a, &stack_b);
 	ft_printf("-----------------------------\n");
-	// ft_lstsize(stack_a);
+	print_nodes(&stack_a_copy);
+	ft_printf("-----------------------------\n");
+	ft_printf("orginal stack reassigned indexes\n");
+	ft_printf("-----------------------------\n");
 	print_nodes(&stack_a);
 	// print_table_b(stack_a, stack_b);
 	return (0);
