@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 12:34:38 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/19 17:45:22 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/20 13:45:38 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,26 +26,33 @@
 // 	return (min);
 // }
 
-int	min_value(t_list **stack)
-{
-	int	min;
-	int	position;
-	int	minPosition;
+// int	min_value(t_list **stack)
+// {
+// 	int	min;
+// 	int	position;
+// 	int	minPosition;
 	
-	min = (*stack)->val;
-	position = 0;
-	minPosition = 0;
-	while(*stack)
-	{
-		if((*stack)->val < min)
-		{ 
-			printf("hello");
-			min = (*stack)->val;
-			minPosition = position;
-		}
-		(*stack)->index = position;
-		(*stack) = (*stack)->next;
-		position++;
-	}
-	return (minPosition);
+// 	min = (*stack)->val;
+// 	position = 0;
+// 	minPosition = 0;
+// 	while(*stack)
+// 	{
+// 		if((*stack)->val < min)
+// 		{ 
+// 			printf("hello");
+// 			min = (*stack)->val;
+// 			minPosition = position;
+// 		}
+// 		(*stack)->index = position;
+// 		(*stack) = (*stack)->next;
+// 		position++;
+// 	}
+// 	return (minPosition);
+// }
+
+
+// function to sort the linked list by index in ascending order
+void	sort_by_index(t_list **stack)
+{
+	
 }

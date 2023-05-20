@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 13:46:07 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/17 11:05:09 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/20 11:31:42 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,14 +67,16 @@ char			*ft_substr(char const *s, unsigned int start, size_t len);
 
 /* linked lists */
 t_list			*ft_lstnew(int content);
-t_list			*ft_lstnew_mod(int content);
+t_list			*ft_lstnew_mod(int value, int index);
 t_list			*ft_lstlast(t_list *lst);
+t_list			*ft_lstsorted(t_list **stack, t_list *new_node);
 int				ft_lstsize(t_list *lst);
 void			ft_lstadd_front(t_list **lst, t_list *new);
 void			ft_lstadd_back(t_list **lst, t_list *new);
-// void	ft_lstclear(t_list **lst, void (*del)(void *));
-// void	ft_lstiter(t_list *lst, void (*f)(void *));
-// void	ft_lstdelone(t_list *lst, void (*del)(void *));
+/* adds node in properly indexed */
+void			ft_lstclear(t_list **lst, void (*del)(void *));
+void			ft_lstiter(t_list *lst, void (*f)(void *));
+void			ft_lstdelone(t_list *lst, void (*del)(void *));
 
 
 

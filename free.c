@@ -6,10 +6,13 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 13:35:42 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/08 13:36:10 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/20 11:01:19 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_stack(t_list **)
+void	free_stack(t_list **stack)
+{
+	free(*stack);
+}

@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 16:03:58 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/08 19:18:33 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/20 13:48:33 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	is_dup(char **argv)
 	j = 2;
 	while (argv[i]) // checks if first element exists
 	{
-		while(argv[j]) //ellement afeter current element
+		while(argv[j]) //ellement after current element
 		{
 			len = ft_strlen(argv[i + 1]);
 			if (len != 0) //enters statement as long as string is not 0
@@ -80,15 +80,28 @@ int	*valid_int(int argc, char **argv)
 
 void	input_check(int argc, char **argv)
 {
-	int	*int_array;
-	int	duplicate;
-	t_list *stack_a;
+	int		*int_array;
+	int		duplicate;
+	int		index;
+	t_list 	*stack;
 	
+	index = 1;
 	if (argc <= 1)
 		exit(write(2, "Error: invalid array\n", 22));
 	int_array = valid_int(argc, argv);
 	duplicate = is_dup(argv);
-	stack_a = NULL;
+	stack = NULL;
 	while (*++argv)
-		ft_lstadd_back(&stack_a, ft_lstnew_mod(ft_atoi_mod(*argv)));
+	{
+		ft_lstadd_back(&stack, ft_lstnew_mod(ft_atoi_mod(*argv), index));
+		index++; //increment index variable
+	}
 }
+
+
+//  this interesting nugget of code: 
+//  	while (*++argv) 
+// 		ft_lstadd_back(&stack_a, ft_lstnew_mod(ft_atoi_mod(*argv), i));
+//  increments the argc pointer to point to the next element in teh arrgay,
+//  and then deregerences the pointer to access the value at that memory location
+//  argv is an array of strings, *argv gives us teh current string being processe
