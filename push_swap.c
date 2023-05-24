@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:32:17 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/20 15:57:36 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/24 17:35:28 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,29 +52,23 @@ void	print_nodes(t_list **stack)
 int	main(int argc, char **argv)
 {	
 	int i;
-	int j;
 	t_list	*stack_a;
-	t_list	*stack_a_copy;
+	t_list	*stack_a_cpy;
 	t_list	*stack_b;
 	
 	i = 1;
-	j = 1;
 	stack_a = NULL;
-	stack_a_copy = NULL;
+	stack_a_cpy = NULL;
 	stack_b = NULL;
 	input_check(argc, argv);
 	while(argv[i])
 	{
 		ft_lstadd_back(&stack_a, ft_lstnew_mod(ft_atoi_mod(argv[i]), i));
+		ft_lstadd_back(&stack_a_cpy, ft_lstnew_mod(ft_atoi_mod(argv[i]), i));
 		i++;
 	}
-	while(argv[j])
-	{
-		ft_lstadd_back(&stack_a_copy, ft_lstnew_mod(ft_atoi_mod(argv[j]), j));
-		j++;
-	}
-	print_nodes(&stack_a_copy);
-	// bubble_sort(&stack_a_copy);
+	print_nodes(&stack_a_cpy);
+	// bubble_sort(&stack_a_cpy);
 	// ft_lstsize(stack_a);
 	// swap_sa(&stack_a);
 	// rotate_ra(&stack_a);
@@ -82,13 +76,13 @@ int	main(int argc, char **argv)
 	// push_pb(&stack_a, &stack_b);
 	// push_pa(&stack_a, &stack_b);
 	// sort_by_index(&stack_a);
-	if_three(&stack_a_copy); 
-	update_index(&stack_a_copy);
-	assign_indexes(&stack_a, &stack_a_copy);
+	if_three(&stack_a_cpy); 
+	update_index(&stack_a_cpy);
+	reassign_index(&stack_a, &stack_a_cpy);
 	// if_four(&stack_a, &stack_b);
 	// if_five(&stack_a, &stack_b);
 	ft_printf("-----------------------------\n");
-	print_nodes(&stack_a_copy);
+	print_nodes(&stack_a_cpy);
 	ft_printf("-----------------------------\n");
 	ft_printf("orginal stack reassigned indexes\n");
 	ft_printf("-----------------------------\n");
