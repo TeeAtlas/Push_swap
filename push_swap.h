@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 20:01:16 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/20 15:46:32 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/24 17:32:21 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	push_two_b(t_list **stack_a, t_list **stack_b);
 // int		min_value(t_list **stack);
 // void	index_val_swap(t_list **stack);
 void	update_index(t_list **stack);
-void	assign_indexes(t_list **stack, t_list **stack_cpy);
+void	reassign_index(t_list **stack, t_list **stack_cpy);
 void	bubble_sort(t_list **stack);
 int		stack_len(t_list *stack_a);
 
