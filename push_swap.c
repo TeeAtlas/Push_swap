@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:32:17 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/24 17:35:28 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/26 15:06:47 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,9 @@ int	main(int argc, char **argv)
 	// push_pb(&stack_a, &stack_b);
 	// push_pa(&stack_a, &stack_b);
 	// sort_by_index(&stack_a);
-	if_three(&stack_a_cpy); 
+	ft_lstsize(stack_a);
+	// if_three(&stack_a_cpy); 
+	bubble_sort(&stack_a_cpy);
 	update_index(&stack_a_cpy);
 	reassign_index(&stack_a, &stack_a_cpy);
 	// if_four(&stack_a, &stack_b);

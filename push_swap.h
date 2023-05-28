@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 20:01:16 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/24 17:32:21 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/26 14:57:44 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
+# include <stdbool.h>
 
 int		main(int argc, char **argv);
 
@@ -46,10 +47,10 @@ void	rotate_rrr(t_list **stack_a, t_list **stack_b);
 /* sort */
 void	if_two(t_list **stack_a);
 void	if_three(t_list **stack_a);
-void	if_four(t_list **stack_a, t_list **stack_b);
+void	if_four_five(t_list **stack);
 
 // void	if_five(t_list **stack_a, t_list **stack_b);
-void	push_two_b(t_list **stack_a, t_list **stack_b);
+// void	push_two_b(t_list **stack_a, t_list **stack_b);
 
 /* indexing */
 // t_list 	*sort_by_index(t_list **stack);
@@ -58,7 +59,6 @@ void	push_two_b(t_list **stack_a, t_list **stack_b);
 void	update_index(t_list **stack);
 void	reassign_index(t_list **stack, t_list **stack_cpy);
 void	bubble_sort(t_list **stack);
-int		stack_len(t_list *stack_a);
 
 /* freeing */
 void	free_stack(t_list **stack);
