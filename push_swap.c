@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:32:17 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/26 15:06:47 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/28 16:14:58 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,21 +68,18 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	print_nodes(&stack_a_cpy);
-	// bubble_sort(&stack_a_cpy);
-	// ft_lstsize(stack_a);
+	ft_lstsize(stack_a);
 	// swap_sa(&stack_a);
 	// rotate_ra(&stack_a);
 	// rotate_rra(&stack_a);
 	// push_pb(&stack_a, &stack_b);
 	// push_pa(&stack_a, &stack_b);
 	// sort_by_index(&stack_a);
-	ft_lstsize(stack_a);
-	// if_three(&stack_a_cpy); 
-	bubble_sort(&stack_a_cpy);
+	// sort_three(&stack_a_cpy);
+	sort_four(&stack_a_cpy, &stack_b);
+	// sort_five(&stack_a_cpy, &stack_b);
 	update_index(&stack_a_cpy);
 	reassign_index(&stack_a, &stack_a_cpy);
-	// if_four(&stack_a, &stack_b);
-	// if_five(&stack_a, &stack_b);
 	ft_printf("-----------------------------\n");
 	print_nodes(&stack_a_cpy);
 	ft_printf("-----------------------------\n");
