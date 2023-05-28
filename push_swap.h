@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 20:01:16 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/26 14:57:44 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/28 16:41:46 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,15 @@ void	rotate_rra(t_list **stack_a);
 void	rotate_rrb(t_list **stack_b);
 void	rotate_rrr(t_list **stack_a, t_list **stack_b);
 
-/* sort */
-void	if_two(t_list **stack_a);
-void	if_three(t_list **stack_a);
-void	if_four_five(t_list **stack);
+/* sort_small */
+void	sort_two(t_list **stack_a);
+void	sort_three(t_list **stack_a);
+int		min_value(t_list **stack);
+void	sort_four(t_list **stack_a, t_list **stack_b);
+void	sort_five(t_list **stack_a, t_list **stack_b);
+
+/* sort_big */
+int max_value(t_list **stack);
 
 // void	if_five(t_list **stack_a, t_list **stack_b);
 // void	push_two_b(t_list **stack_a, t_list **stack_b);
@@ -58,7 +63,6 @@ void	if_four_five(t_list **stack);
 // void	index_val_swap(t_list **stack);
 void	update_index(t_list **stack);
 void	reassign_index(t_list **stack, t_list **stack_cpy);
-void	bubble_sort(t_list **stack);
 
 /* freeing */
 void	free_stack(t_list **stack);

@@ -6,7 +6,7 @@
 #    By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/15 11:39:37 by taboterm          #+#    #+#              #
-#    Updated: 2023/05/28 16:06:10 by taboterm         ###   ########.fr        #
+#    Updated: 2023/05/28 16:41:58 by taboterm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ LIBFT = libft
 
 # Source and object files
 SRCS = push_swap.c checks.c operations_s.c operations_r.c operations_p.c\
-		sort_small.c indexing.c\
+		sort_small.c sort_big.c indexing.c\
 
 OBJS = $(SRCS:%.c=%.o)
 
