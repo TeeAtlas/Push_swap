@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:47:14 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/28 16:19:12 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/30 16:51:20 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,31 +56,4 @@ void reassign_index(t_list **stack, t_list **stack_cpy)
 
         current_cpy = current_cpy->next; //move to next node in stack_cpy
     }
-}
-
-
-void	index_val_swap(t_list **stack)
-{
-	t_list		*current;
-	t_list		*next;
-	long int	temp_val;
-	int 		temp_i;
-	 
-	current = (*stack); // declare current as pointer to stack
-	next = current->next; // declare next as pointer to next node
-	while (next != NULL) // as long as the stack is not empty
-	{
-		if (current->val > next->val) // if current value is greater than next value
-		{
-			temp_val = current->val; // store current value in temp
-			temp_i = current->index; // store current index in temp
-			current->val = next->val; // assign next value to current
-			current->index = next->index; // assign next index to current
-			next->val = temp_val; // assign temp value to next
-			next->index = temp_i; // assign temp index to next
-		}
-		current = current->next; // set current to next node until null
-		next = next->next; // set next to next node until null
-	}				
-	
 }

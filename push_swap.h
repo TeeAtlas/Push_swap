@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 20:01:16 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/28 16:41:46 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/30 20:02:54 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,15 @@
 # include <stdarg.h>
 # include <stdbool.h>
 
-int		main(int argc, char **argv);
 
 /* main */
-// void	print_table(t_list *stack_a);
 void	print_nodes(t_list **stack);
+bool	is_sorted(t_list **stack);
+void	print_result(t_list **stack_a, t_list **stack_b);
+int		main(int argc, char **argv);
+
+void	linked_list(t_list **stack_a, t_list **stack_a_cpy, char **argv);
+
 
 /* checks_a */
 void	input_check(int argc, char **argv);
@@ -54,17 +58,12 @@ void	sort_five(t_list **stack_a, t_list **stack_b);
 /* sort_big */
 int max_value(t_list **stack);
 
-// void	if_five(t_list **stack_a, t_list **stack_b);
-// void	push_two_b(t_list **stack_a, t_list **stack_b);
-
 /* indexing */
-// t_list 	*sort_by_index(t_list **stack);
-// int		min_value(t_list **stack);
-// void	index_val_swap(t_list **stack);
 void	update_index(t_list **stack);
 void	reassign_index(t_list **stack, t_list **stack_cpy);
 
 /* freeing */
-void	free_stack(t_list **stack);
+void	freeing_stack(t_list **stack);
+void	free_all(t_list **stack_a, t_list **stack_b, t_list **stack_a_cpy);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 13:46:07 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/20 11:31:42 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/30 15:13:44 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,9 @@ int				ft_lstsize(t_list *lst);
 void			ft_lstadd_front(t_list **lst, t_list *new);
 void			ft_lstadd_back(t_list **lst, t_list *new);
 /* adds node in properly indexed */
-void			ft_lstclear(t_list **lst, void (*del)(void *));
+void			ft_lstclear(t_list **stack);
 void			ft_lstiter(t_list *lst, void (*f)(void *));
-void			ft_lstdelone(t_list *lst, void (*del)(void *));
+void			ft_lstdelone(t_list *stack);
 
 
 

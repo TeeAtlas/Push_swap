@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 12:41:37 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/05 21:46:49 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/28 13:35:59 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ void	push_pb(t_list	**stack_a, t_list **stack_b)
 {
 	t_list	*temp;
 
-	if(!(*stack_a))
+	if(*stack_a == NULL)
 		return ;
 	temp = (*stack_a); // stores the value of the first element of stack_a
-	(*stack_a) = temp->next; 
+	(*stack_a) = (*stack_a)->next; 
 	ft_lstadd_front(stack_b, temp);
 	write(1, "pb\n", 3);
 }

@@ -6,35 +6,11 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:32:17 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/28 16:14:58 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/30 20:09:46 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/* all checks throw 1 flag if ok and 0 if not */
-/* start at argc[1], because argc[0] is executable */
-
-// void	print_table(t_list *stack_a)
-// {
-// 	int n;
-// 	int i;
-// 	t_list *temp;
-
-// 	n = 20;
-// 	i = 1;
-// 	temp = stack_a;
-// 	printf("-----------------------------\n");
-// 	printf("nodes: \n");
-// 	printf("-----------------------------\n");
-// 	while (i <= n && temp != NULL)
-// 	{
-// 		ft_printf("    %d   |  %d \n", i, temp->val);
-// 		temp = temp->next;
-// 		i++;
-// 	}
-// 	printf("-----------------------------\n\n");
-// }
 
 // to print nodes in linked list
 void	print_nodes(t_list **stack)
@@ -49,24 +25,40 @@ void	print_nodes(t_list **stack)
 	}
 }
 
+bool	is_sorted(t_list **stack)
+{
+	t_list	*current;
+	
+	current = (*stack); // creating pointer to travers the list
+	while (current->next != NULL)
+	{
+		if (current->val > current->next->val)
+			return false;
+		current = current->next;
+	}
+	return true;
+}
+
+void	print_result(t_list **stack_a, t_list **stack_b)
+{
+	if (is_sorted(stack_a) && (*stack_b) == NULL && (*stack_a) != NULL)
+		write(1, "OK\n", 3);
+	else 
+		write(1, "KO\n", 3);
+	return ;
+}
+
 int	main(int argc, char **argv)
 {	
-	int i;
 	t_list	*stack_a;
 	t_list	*stack_a_cpy;
 	t_list	*stack_b;
 	
-	i = 1;
 	stack_a = NULL;
 	stack_a_cpy = NULL;
 	stack_b = NULL;
 	input_check(argc, argv);
-	while(argv[i])
-	{
-		ft_lstadd_back(&stack_a, ft_lstnew_mod(ft_atoi_mod(argv[i]), i));
-		ft_lstadd_back(&stack_a_cpy, ft_lstnew_mod(ft_atoi_mod(argv[i]), i));
-		i++;
-	}
+	linked_list(&stack_a, &stack_a_cpy, argv);
 	print_nodes(&stack_a_cpy);
 	ft_lstsize(stack_a);
 	// swap_sa(&stack_a);
@@ -79,6 +71,7 @@ int	main(int argc, char **argv)
 	sort_four(&stack_a_cpy, &stack_b);
 	// sort_five(&stack_a_cpy, &stack_b);
 	update_index(&stack_a_cpy);
+	print_result(&stack_a_cpy, &stack_b);
 	reassign_index(&stack_a, &stack_a_cpy);
 	ft_printf("-----------------------------\n");
 	print_nodes(&stack_a_cpy);
@@ -86,7 +79,7 @@ int	main(int argc, char **argv)
 	ft_printf("orginal stack reassigned indexes\n");
 	ft_printf("-----------------------------\n");
 	print_nodes(&stack_a);
-	// print_table_b(stack_a, stack_b);
+	free_all(&stack_a, &stack_b, &stack_a_cpy);
 	return (0);
 }
 

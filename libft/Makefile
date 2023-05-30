@@ -10,7 +10,7 @@ SRC = ft_isalpha.c ft_isalnum.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_strlen
 	get_next_line.c\
 	ft_printf.c\
 	ft_lstnew.c ft_lstnew_mod.c ft_lstlast.c ft_lstsize.c ft_lstadd_back.c\
-	ft_lstadd_front.c\
+	ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c\
 	
 OBJS = $(SRC:.c=.o)
 

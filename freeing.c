@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.c                                             :+:      :+:    :+:   */
+/*   freeing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/08 13:35:42 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/20 11:01:19 by taboterm         ###   ########.fr       */
+/*   Created: 2023/05/30 14:15:25 by taboterm          #+#    #+#             */
+/*   Updated: 2023/05/30 15:54:14 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_stack(t_list **stack)
+void	freeing_stack(t_list **stack)
 {
-	free(*stack);
+	ft_lstclear(stack);
+}
+
+void	free_all(t_list **stack_a, t_list **stack_b, t_list **stack_a_cpy)
+{
+	ft_lstclear(stack_a);
+	ft_lstclear(stack_a_cpy);
+	ft_lstclear(stack_b);
 }

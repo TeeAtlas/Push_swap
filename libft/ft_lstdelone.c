@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 20:01:22 by taboterm          #+#    #+#             */
-/*   Updated: 2023/04/07 20:29:49 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/30 15:13:33 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,11 @@
 * nodes content using 'del' given as a param and frees
 * the node without freeing the memory of 'next'
 */
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_lstdelone(t_list *stack)
 {
-	if (!lst || !del)
+	if (!stack)
 		return ; // if either are NULL return without doing anything
-	del(lst -> content); // del function pointer 
-	free (lst); // then frees memory allocated to node deleting from linked list
+	free (stack); // then frees memory allocated to node deleting from linked list
 }
 
 /* del function: will perform some action depending on the requirements
