@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:32:17 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/31 21:14:54 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/31 21:53:15 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,22 +53,18 @@ int	hard_sort(t_list **stack_a, t_list **stack_b, int argc)
 	if (argc == 3)
 	{
 		sort_two(stack_a);
-		free_two(stack_a, stack_b);
 	}
 	else if (argc == 4)
 	{
 		sort_three(stack_a);
-		free_two(stack_a, stack_b);
 	}
 	else if (argc == 5)
 	{
 		sort_four(stack_a, stack_b);
-		free_two(stack_a, stack_b);
 	}
 	else if (argc == 6)
 	{
 		sort_five(stack_a, stack_b);
-		free_two(stack_a, stack_b);
 	}
 	return (0);
 }
@@ -86,15 +82,7 @@ int	main(int argc, char **argv)
 	linked_list(&stack_a, &stack_a_cpy, argv);
 	print_nodes(&stack_a_cpy);
 	ft_lstsize(stack_a);
-	// swap_sa(&stack_a);
-	// rotate_ra(&stack_a);
-	// rotate_rra(&stack_a);
-	// push_pb(&stack_a, &stack_b);
-	// push_pa(&stack_a, &stack_b);
-	// sort_by_index(&stack_a);
-	// sort_three(&stack_a_cpy);
-	sort_four(&stack_a_cpy, &stack_b);
-	// sort_five(&stack_a_cpy, &stack_b);
+	hard_sort(&stack_a_cpy, &stack_b, argc);
 	update_index(&stack_a_cpy);
 	print_result(&stack_a_cpy, &stack_b);
 	reassign_index(&stack_a, &stack_a_cpy);

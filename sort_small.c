@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 18:05:08 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/28 16:18:45 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/31 21:51:48 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,9 +116,9 @@ void	sort_five(t_list **stack_a, t_list **stack_b)
 		rotate_ra(stack_a); // rotate stack_a
 	push_pb(stack_a, stack_b); // push first node to stack_b
 	current_min = min_value(stack_a); // find min value in stack_a
-	if (last->val == current_min) // if the first node is the min_next value
+	if (last->next->val == current_min) // if the first node is the min_next value
 		rotate_rra(stack_a); // rotate stack_a
-	else if (last->val != current_min) // if the first node is not the min value
+	if (last->next->val != current_min) // if the first node is not the min value
 	{
 		while ((*stack_a)->val != current_min) // while the first node is not the min value
 			rotate_ra(stack_a); // rotate stack_a
