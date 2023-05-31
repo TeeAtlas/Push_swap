@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:32:17 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/30 20:09:46 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/31 21:14:54 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,31 @@ void	print_result(t_list **stack_a, t_list **stack_b)
 	else 
 		write(1, "KO\n", 3);
 	return ;
+}
+
+int	hard_sort(t_list **stack_a, t_list **stack_b, int argc)
+{
+	if (argc == 3)
+	{
+		sort_two(stack_a);
+		free_two(stack_a, stack_b);
+	}
+	else if (argc == 4)
+	{
+		sort_three(stack_a);
+		free_two(stack_a, stack_b);
+	}
+	else if (argc == 5)
+	{
+		sort_four(stack_a, stack_b);
+		free_two(stack_a, stack_b);
+	}
+	else if (argc == 6)
+	{
+		sort_five(stack_a, stack_b);
+		free_two(stack_a, stack_b);
+	}
+	return (0);
 }
 
 int	main(int argc, char **argv)
