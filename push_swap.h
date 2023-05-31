@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 20:01:16 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/31 19:04:32 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/31 22:57:12 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	print_nodes(t_list **stack);
 bool	is_sorted(t_list **stack);
 void	print_result(t_list **stack_a, t_list **stack_b);
 int		main(int argc, char **argv);
-int		hard_sort(t_list **stack_a, t_list **stack_b, int argc);
+int		all_sort(t_list **stack_a, t_list **stack_b, int argc);
 
 void	linked_list(t_list **stack_a, t_list **stack_a_cpy, char **argv);
 
@@ -57,10 +57,10 @@ void	sort_four(t_list **stack_a, t_list **stack_b);
 void	sort_five(t_list **stack_a, t_list **stack_b);
 
 /* sort_big */
-int 	max_value(t_list **stack);
-int		count_max_bits(int max_number, int max_bits);
-int		get_max_bits(t_list **stack);
-void	radix_sort(t_list **stack_a, t_list **stack_b);
+// int 	max_value(t_list **stack);
+// int		count_max_bits(int max_number, int max_bits);
+// int		get_max_bits(t_list **stack);
+void	radix_sort(t_list **stack_a, t_list **stack_b, size_t lst_size);
 
 /* indexing */
 void	update_index(t_list **stack);

@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:32:17 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/31 21:53:15 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/05/31 22:59:41 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	print_result(t_list **stack_a, t_list **stack_b)
 	return ;
 }
 
-int	hard_sort(t_list **stack_a, t_list **stack_b, int argc)
+int	all_sort(t_list **stack_a, t_list **stack_b, int argc)
 {
 	if (argc == 3)
 	{
@@ -66,6 +66,10 @@ int	hard_sort(t_list **stack_a, t_list **stack_b, int argc)
 	{
 		sort_five(stack_a, stack_b);
 	}
+	// else if (argc >= 7)
+	// {
+	// 	radix_sort(stack_a, stack_b);
+	// }
 	return (0);
 }
 
@@ -74,24 +78,27 @@ int	main(int argc, char **argv)
 	t_list	*stack_a;
 	t_list	*stack_a_cpy;
 	t_list	*stack_b;
+	size_t	lst_size;
 	
 	stack_a = NULL;
 	stack_a_cpy = NULL;
 	stack_b = NULL;
+	lst_size = ft_lstsize(stack_a);
 	input_check(argc, argv);
 	linked_list(&stack_a, &stack_a_cpy, argv);
-	print_nodes(&stack_a_cpy);
-	ft_lstsize(stack_a);
-	hard_sort(&stack_a_cpy, &stack_b, argc);
+	// print_nodes(&stack_a_cpy);
+	// if (argc > 2 && argc < 7)
+	// 	all_sort(&stack_a_cpy, &stack_b, argc);
+	radix_sort(&stack_a_cpy, &stack_b, lst_size);
 	update_index(&stack_a_cpy);
 	print_result(&stack_a_cpy, &stack_b);
 	reassign_index(&stack_a, &stack_a_cpy);
-	ft_printf("-----------------------------\n");
-	print_nodes(&stack_a_cpy);
-	ft_printf("-----------------------------\n");
-	ft_printf("orginal stack reassigned indexes\n");
-	ft_printf("-----------------------------\n");
-	print_nodes(&stack_a);
+	// ft_printf("-----------------------------\n");
+	// print_nodes(&stack_a_cpy);
+	// ft_printf("-----------------------------\n");
+	// ft_printf("orginal stack reassigned indexes\n");
+	// ft_printf("-----------------------------\n");
+	// print_nodes(&stack_a);
 	free_all(&stack_a, &stack_b, &stack_a_cpy);
 	return (0);
 }
