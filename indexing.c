@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:47:14 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/30 16:51:20 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/06/02 19:58:32 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,15 @@
 /* were made during the pass throught the linked list*/
 /* the swap condition prevents unneccessary iterations */
 
+
+// hanlding neagtives as a minumum
+t_list  get_min(t_list **stack_a)
+{
+    
+}
+
 //function to update index after sorting
+// here is where you manage negatives
 void	update_index(t_list **stack)
 {
 	int		i; 
@@ -32,6 +40,8 @@ void	update_index(t_list **stack)
 		current = current->next; // set current to next node until null
 	}
 }
+
+
 
 void reassign_index(t_list **stack, t_list **stack_cpy)
 {
