@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:32:17 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/31 22:59:41 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/06/02 14:00:03 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ bool	is_sorted(t_list **stack)
 {
 	t_list	*current;
 	
-	current = (*stack); // creating pointer to travers the list
+	current = (*stack); // creating pointer to travers the list does not change original head
 	while (current->next != NULL)
 	{
 		if (current->val > current->next->val)
@@ -50,26 +50,19 @@ void	print_result(t_list **stack_a, t_list **stack_b)
 
 int	all_sort(t_list **stack_a, t_list **stack_b, int argc)
 {
+	size_t	lst_size;
+
+	lst_size = ft_lstsize(*stack_a);
 	if (argc == 3)
-	{
 		sort_two(stack_a);
-	}
 	else if (argc == 4)
-	{
 		sort_three(stack_a);
-	}
 	else if (argc == 5)
-	{
 		sort_four(stack_a, stack_b);
-	}
 	else if (argc == 6)
-	{
 		sort_five(stack_a, stack_b);
-	}
-	// else if (argc >= 7)
-	// {
-	// 	radix_sort(stack_a, stack_b);
-	// }
+	else
+		radix_sort(stack_a, stack_b, lst_size);
 	return (0);
 }
 
@@ -78,18 +71,15 @@ int	main(int argc, char **argv)
 	t_list	*stack_a;
 	t_list	*stack_a_cpy;
 	t_list	*stack_b;
-	size_t	lst_size;
 	
 	stack_a = NULL;
 	stack_a_cpy = NULL;
 	stack_b = NULL;
-	lst_size = ft_lstsize(stack_a);
 	input_check(argc, argv);
 	linked_list(&stack_a, &stack_a_cpy, argv);
 	// print_nodes(&stack_a_cpy);
 	// if (argc > 2 && argc < 7)
-	// 	all_sort(&stack_a_cpy, &stack_b, argc);
-	radix_sort(&stack_a_cpy, &stack_b, lst_size);
+	all_sort(&stack_a_cpy, &stack_b, argc);
 	update_index(&stack_a_cpy);
 	print_result(&stack_a_cpy, &stack_b);
 	reassign_index(&stack_a, &stack_a_cpy);
