@@ -6,12 +6,13 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 19:27:10 by taboterm          #+#    #+#             */
-/*   Updated: 2023/05/30 20:09:32 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/06/02 13:54:50 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/* this creates nodes in the list accorging to data passed in commandline */
 void	linked_list(t_list **stack_a, t_list **stack_a_cpy, char **argv)
 {
 	int i;

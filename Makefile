@@ -6,7 +6,7 @@
 #    By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/15 11:39:37 by taboterm          #+#    #+#              #
-#    Updated: 2023/05/30 19:58:29 by taboterm         ###   ########.fr        #
+#    Updated: 2023/06/02 13:39:11 by taboterm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ OBJ_PATH = obj/
 LIBFT = libft
 
 # Source and object files
-SRCS = push_swap.c linked_list.c checks.c operations_s.c operations_r.c operations_p.c\
+SRCS = push_swap.c linked_list.c checks.c swap.c rotate.c push.c\
 		sort_small.c sort_big.c indexing.c freeing.c\
 
 OBJS = $(SRCS:%.c=%.o)
@@ -45,7 +45,7 @@ $(OBJ_PATH):
 # Make target executable
 $(NAME): $(OBJS)
 	$(MAKE) -C $(LIBFT)
-	$(CC)  $(CFLAGS) $(OBJS) $(LIBFT_A) -o $(NAME) -fsanitize=address
+	$(CC)  $(CFLAGS) $(OBJS) $(LIBFT_A) -o $(NAME)
 	mv $(OBJS) $(OBJ_PATH)
 
 clean:

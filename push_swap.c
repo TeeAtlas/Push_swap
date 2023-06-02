@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:32:17 by taboterm          #+#    #+#             */
-/*   Updated: 2023/06/02 14:00:03 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/06/02 19:15:11 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,18 +77,17 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	input_check(argc, argv);
 	linked_list(&stack_a, &stack_a_cpy, argv);
-	// print_nodes(&stack_a_cpy);
-	// if (argc > 2 && argc < 7)
+	print_nodes(&stack_a_cpy);
 	all_sort(&stack_a_cpy, &stack_b, argc);
 	update_index(&stack_a_cpy);
 	print_result(&stack_a_cpy, &stack_b);
 	reassign_index(&stack_a, &stack_a_cpy);
-	// ft_printf("-----------------------------\n");
-	// print_nodes(&stack_a_cpy);
-	// ft_printf("-----------------------------\n");
-	// ft_printf("orginal stack reassigned indexes\n");
-	// ft_printf("-----------------------------\n");
-	// print_nodes(&stack_a);
+	ft_printf("-----------------------------\n");
+	print_nodes(&stack_a_cpy);
+	ft_printf("-----------------------------\n");
+	ft_printf("orginal stack reassigned indexes\n");
+	ft_printf("-----------------------------\n");
+	print_nodes(&stack_a);
 	free_all(&stack_a, &stack_b, &stack_a_cpy);
 	return (0);
 }

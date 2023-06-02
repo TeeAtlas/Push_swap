@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 20:01:16 by taboterm          #+#    #+#             */
-/*   Updated: 2023/06/02 13:50:22 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/06/02 18:40:08 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 /* main */
 void	print_nodes(t_list **stack);
 bool	is_sorted(t_list **stack);
+bool	is_sorted_2(t_list **stack);
 void	print_result(t_list **stack_a, t_list **stack_b);
 int		main(int argc, char **argv);
 int		all_sort(t_list **stack_a, t_list **stack_b, int argc);
