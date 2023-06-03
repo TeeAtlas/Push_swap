@@ -6,26 +6,13 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:32:17 by taboterm          #+#    #+#             */
-/*   Updated: 2023/06/03 20:57:55 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/06/03 21:32:58 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// to print nodes in linked list
-void	print_nodes(t_list **stack)
-{
-	t_list	*current;
-	
-	current = (*stack); // declare current as pointer to stack
-	while(current != NULL) // as long as the stack is not empty
-	{
-		ft_printf("Value: %d, Index %d\n", current->val, current->index);
-		current = current->next; // set current to next node until null
-	}
-}
-
-bool	is_sorted(t_list **stack)
+int	is_sorted(t_list **stack)
 {
 	t_list	*current;
 	
@@ -37,24 +24,6 @@ bool	is_sorted(t_list **stack)
 		current = current->next;
 	}
 	return true;
-}
-
-int	all_sort(t_list **stack_a, t_list **stack_b, int argc)
-{
-	size_t	lst_size;
-
-	lst_size = ft_lstsize(*stack_a);
-	if (argc == 3)
-		sort_two(stack_a);
-	else if (argc == 4)
-		sort_three(stack_a);
-	else if (argc == 5)
-		sort_four(stack_a, stack_b);
-	else if (argc == 6)
-		sort_five(stack_a, stack_b);
-	else
-		radix_sort(stack_a, stack_b, ft_lstsize(*stack_a));
-	return (0);
 }
 
 int	main(int argc, char **argv)
@@ -71,7 +40,16 @@ int	main(int argc, char **argv)
 	value_sort(&stack_a_cpy, &stack_b, ft_lstsize(stack_a_cpy));
 	update_index(&stack_a_cpy);
 	reassign_index(&stack_a, &stack_a_cpy);
-	radix_sort(&stack_a, &stack_b, ft_lstsize(stack_a));
+	if (argc == 3)
+		sort_two(&stack_a);
+	else if (argc == 4)
+		sort_three(&stack_a);
+	else if (argc == 5)
+		sort_four(&stack_a, &stack_b);
+	else if (argc == 6)
+		sort_five(&stack_a, &stack_b);
+	else
+		radix_sort(&stack_a, &stack_b, ft_lstsize(stack_a));
 	free_all(&stack_a, &stack_b, &stack_a_cpy);
 	return (0);
 }

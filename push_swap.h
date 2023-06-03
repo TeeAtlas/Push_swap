@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 20:01:16 by taboterm          #+#    #+#             */
-/*   Updated: 2023/06/03 20:59:10 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/06/03 21:34:49 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,8 @@
 
 
 /* main */
-void	print_nodes(t_list **stack);
 int		is_sorted(t_list **stack);
-void	print_result(t_list **stack_a, t_list **stack_b);
 int		main(int argc, char **argv);
-int		all_sort(t_list **stack_a, t_list **stack_b, int argc);
 
 void	linked_list(t_list **stack_a, t_list **stack_a_cpy, char **argv);
 
@@ -65,7 +62,8 @@ void	update_index(t_list **stack);
 void	reassign_index(t_list **stack, t_list **stack_cpy);
 
 /* freeing */
-void	freeing_stack(t_list **stack);
+void	free_stack(t_list **stack);
+void	free_two(t_list **stack_a, t_list **stack_b);
 void	free_all(t_list **stack_a, t_list **stack_b, t_list **stack_a_cpy);
 
 #endif
