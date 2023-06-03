@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 18:34:49 by taboterm          #+#    #+#             */
-/*   Updated: 2023/06/03 16:58:55 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/06/03 20:43:31 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	rotate_ra(t_list **stack_a, int print)
 }
 
 //reverse rotate bottom element to top
-void	rotate_rra(t_list **stack_a)
+void	rotate_rra(t_list **stack_a, int print)
 {
 	t_list	*first;
 	t_list	*current;
@@ -49,11 +49,12 @@ void	rotate_rra(t_list **stack_a)
 	first->next = NULL; // now we set pointer to last puting at end of list
 	current->next = *stack_a; // adds last element to the top of the list
 	*stack_a = current; // stack_a points to top of stack
-	write(1, "rra\n", 4);
+	if (print)
+		write(1, "rra\n", 4);
 }
 
 // first element becomes last - stack_b
-void	rotate_rb(t_list **stack_b)
+void	rotate_rb(t_list **stack_b, int print)
 {
 	t_list *last;
 
@@ -65,20 +66,22 @@ void	rotate_rb(t_list **stack_b)
 	last->next = *stack_b;
 	*stack_b = (*stack_b)->next;
 	last->next->next = NULL;
-	write(1, "ra\n", 3);
+	if (print)
+		write(1, "ra\n", 3);
 }
 
 // rotate top to bottom of a and b at the same time
-void	rotate_rr(t_list **stack_a, t_list **stack_b)
+void	rotate_rr(t_list **stack_a, t_list **stack_b, int print)
 {
 	rotate_ra(stack_a, 1);
-	rotate_rb(stack_b);
-	write (1, "rr\n", 3);
+	rotate_rb(stack_b, 1);
+	if (print)
+		write (1, "rr\n", 3);
 }
 
 
 //reverse rotate bottom element to top
-void	rotate_rrb(t_list **stack_b)
+void	rotate_rrb(t_list **stack_b, int print)
 {
 	t_list	*first;
 	t_list	*current;
@@ -95,14 +98,16 @@ void	rotate_rrb(t_list **stack_b)
 	first->next = NULL; // set first pointer to null, making it last
 	current->next = *stack_b; // set current to top of list
 	*stack_b = current; // stack_b pointer points to top of list
-	write(1, "rrb\n", 4);
+	if (print)
+		write(1, "rrb\n", 4);
 }
 
 
 // rotate bottom to top of a and b at the same time
-void	rotate_rrr(t_list **stack_a, t_list **stack_b)
+void	rotate_rrr(t_list **stack_a, t_list **stack_b, int print)
 {
-	rotate_rra(stack_a);
-	rotate_rrb(stack_b);
-	write(1, "rrr\n", 4);
+	rotate_rra(stack_a, 1);
+	rotate_rrb(stack_b, 1);
+	if (print)
+		write(1, "rrr\n", 4);
 }

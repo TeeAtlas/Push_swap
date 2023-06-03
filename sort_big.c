@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 22:47:38 by taboterm          #+#    #+#             */
-/*   Updated: 2023/06/03 17:35:50 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/06/03 19:37:24 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,3 @@ void	radix_sort(t_list **stack_a, t_list **stack_b, size_t lst_size)
 		j = 0;
 	}
 }
-

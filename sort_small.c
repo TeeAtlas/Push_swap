@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 18:05:08 by taboterm          #+#    #+#             */
-/*   Updated: 2023/06/03 17:20:31 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/06/03 20:53:26 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	sort_two(t_list **stack_a)
 	if (first->val < second->val)
 		return ;
 	else if (first->val > second->val)
-		swap_sa(stack_a);
+		swap_sa(stack_a, 1);
 }
 
 void	sort_three(t_list **stack_a)
@@ -51,20 +51,20 @@ void	sort_three(t_list **stack_a)
 	{
 		if (a->val < b->val && a->val < c->val && b->val > c->val) // if 1 3 2
 		{
-			rotate_rra(stack_a);
-			swap_sa(stack_a);
+			rotate_rra(stack_a, 1);
+			swap_sa(stack_a, 1);
 		}
 		if (a->val > b->val && a->val > c->val && b->val > c->val && c->val < b->val) // 3 2 1
 		{
-			swap_sa(stack_a);
-			rotate_rra(stack_a);
+			swap_sa(stack_a, 1);
+			rotate_rra(stack_a, 1);
 		}
 		if (a->val > b->val && a->val > c->val && b->val < c->val) // if 3 1 2 
 			rotate_ra(stack_a, 1);
 		if (a->val > b->val && a->val < c->val && b->val < c->val) // if 2 1 3
-			swap_sa(stack_a);
+			swap_sa(stack_a, 1);
 		if (a->val < b->val && a->val > c->val && b->val > c->val) // if 2 3 1 
-			rotate_rra(stack_a);
+			rotate_rra(stack_a, 1);
 		else 
 			return ;
 	}
@@ -117,7 +117,7 @@ void	sort_five(t_list **stack_a, t_list **stack_b)
 	push_pb(stack_a, stack_b, 1); // push first node to stack_b
 	current_min = min_value(stack_a); // find min value in stack_a
 	if ((*stack_a)->val == current_min) // if the first node is the min_next value
-		rotate_rra(stack_a); // rotate stack_a
+		rotate_rra(stack_a, 1); // rotate stack_a
 	if ((*stack_a)->val != current_min) // if the first node is not the min value
 	{
 		while ((*stack_a)->val != current_min) // while the first node is not the min value
