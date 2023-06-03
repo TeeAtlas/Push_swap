@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 18:34:49 by taboterm          #+#    #+#             */
-/*   Updated: 2023/06/02 13:49:02 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/06/03 16:58:55 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 
 // first element becomes last - stack a
-void	rotate_ra(t_list **stack_a)
+void	rotate_ra(t_list **stack_a, int print)
 {
 	t_list *last;
 
@@ -27,7 +27,8 @@ void	rotate_ra(t_list **stack_a)
 	*stack_a = (*stack_a)->next; //moves first element to end by making second element new first element
 	last->next->next = NULL; //sets new last element 
 	//(which is was the first element and still points to the second) to null disconnecting it from the stack
-	write(1, "ra\n", 3);
+	if (print)
+		write(1, "ra\n", 3);
 }
 
 //reverse rotate bottom element to top
@@ -70,7 +71,7 @@ void	rotate_rb(t_list **stack_b)
 // rotate top to bottom of a and b at the same time
 void	rotate_rr(t_list **stack_a, t_list **stack_b)
 {
-	rotate_ra(stack_a);
+	rotate_ra(stack_a, 1);
 	rotate_rb(stack_b);
 	write (1, "rr\n", 3);
 }

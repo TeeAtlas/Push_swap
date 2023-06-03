@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 18:05:08 by taboterm          #+#    #+#             */
-/*   Updated: 2023/06/02 15:06:45 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/06/03 16:59:01 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	sort_three(t_list **stack_a)
 			rotate_rra(stack_a);
 		}
 		if (a->val > b->val && a->val > c->val && b->val < c->val) // if 3 1 2 
-			rotate_ra(stack_a);
+			rotate_ra(stack_a, 1);
 		if (a->val > b->val && a->val < c->val && b->val < c->val) // if 2 1 3
 			swap_sa(stack_a);
 		if (a->val < b->val && a->val > c->val && b->val > c->val) // if 2 3 1 
@@ -92,10 +92,10 @@ void	sort_four(t_list **stack_a, t_list **stack_b)
 	
 	min = min_value(stack_a); // find min value in stack_a
 	while ((*stack_a)->val != min) // while the first node is not the min value
-		rotate_ra(stack_a); // rotate stack_a until it is
-	push_pb(stack_a, stack_b); // push first node to stack_b
+		rotate_ra(stack_a, 1); // rotate stack_a until it is
+	push_pb(stack_a, stack_b, 1); // push first node to stack_b
 	sort_three(stack_a); // sort the remaining three nodes
-	push_pa(stack_a, stack_b); // push node back to stack_a from b
+	push_pa(stack_a, stack_b, 1); // push node back to stack_a from b
 	
 }
 
@@ -113,18 +113,18 @@ void	sort_five(t_list **stack_a, t_list **stack_b)
 		last->next = NULL; // we set the last node to NULL
 	min = min_value(stack_a); // find min value in stack_a
 	while ((*stack_a)->val != min) // while the first node is not the min value
-		rotate_ra(stack_a); // rotate stack_a
-	push_pb(stack_a, stack_b); // push first node to stack_b
+		rotate_ra(stack_a, 1); // rotate stack_a
+	push_pb(stack_a, stack_b, 1); // push first node to stack_b
 	current_min = min_value(stack_a); // find min value in stack_a
 	if ((*stack_a)->val == current_min) // if the first node is the min_next value
 		rotate_rra(stack_a); // rotate stack_a
 	if ((*stack_a)->val != current_min) // if the first node is not the min value
 	{
 		while ((*stack_a)->val != current_min) // while the first node is not the min value
-			rotate_ra(stack_a); // rotate stack_a
+			rotate_ra(stack_a, 1); // rotate stack_a
 	}
-	push_pb(stack_a, stack_b); // push first node to stack_b
+	push_pb(stack_a, stack_b, 1); // push first node to stack_b
 	sort_three(stack_a); // sort the remaining three nodes
-	push_pa(stack_a, stack_b); // push first node to stack_a
-	push_pa(stack_a, stack_b); // push first node to stack_a
+	push_pa(stack_a, stack_b, 1); // push first node to stack_a
+	push_pa(stack_a, stack_b, 1); // push first node to stack_a
 }

@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 19:24:55 by taboterm          #+#    #+#             */
-/*   Updated: 2023/04/20 16:35:57 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/06/03 14:28:02 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ int	ft_lstsize(t_list *lst)
 		lst = lst->next;
 		i++; //step thruogh list until lst = NULL
 	}
-	ft_printf("The length of list: %d\n", i);
+	// ft_printf("The length of list: %d\n", i);
 	return (i); //return count
 }

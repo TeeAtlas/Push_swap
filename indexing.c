@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:47:14 by taboterm          #+#    #+#             */
-/*   Updated: 2023/06/02 19:58:32 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/06/03 14:00:20 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,7 @@
 /* the swap condition prevents unneccessary iterations */
 
 
-// hanlding neagtives as a minumum
-t_list  get_min(t_list **stack_a)
-{
-    
-}
-
 //function to update index after sorting
-// here is where you manage negatives
 void	update_index(t_list **stack)
 {
 	int		i; 
