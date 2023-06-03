@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 16:51:41 by taboterm          #+#    #+#             */
-/*   Updated: 2023/02/22 18:36:15 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/06/03 17:48:57 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,10 @@ char	*ft_itoa(int n)
 	i = ft_length(nb);
 	num = (char *)malloc(sizeof(char) * (ft_length(nb) + 1));
 	if (!num)
+	{
+		free(num);
 		return (NULL);
+	}
 	num[i--] = '\0';
 	ft_if(nb, num);
 	if (nb < 0)

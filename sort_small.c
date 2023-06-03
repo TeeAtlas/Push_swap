@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 18:05:08 by taboterm          #+#    #+#             */
-/*   Updated: 2023/06/03 16:59:01 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/06/03 17:20:31 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int	min_value(t_list **stack)
 	{
 		if (current->val < min) // if current value is less than min value
 			min = current->val; // set min to current value
-		current = current->next; // set current to next node until null
+		current = current->next; // set current to next node until nullt
 	}
 	return (min); // return min value
 }
